@@ -1,8 +1,10 @@
 eclipse.preferences.version=1
+encoding//Startup/startup_CH583.S=GBK
 encoding//StdPeriphDriver/CH58x_gpio.c=GBK
 encoding//StdPeriphDriver/inc/CH58x_gpio.h=GBK
 encoding//inc/AHT.h=GBK
 encoding//inc/app_i2c.h=GBK
+encoding//obj/makefile=GBK
 encoding//src/AHT.c=GBK
 encoding//src/Main.c=GBK
 encoding//src/app_i2c.c=GBK

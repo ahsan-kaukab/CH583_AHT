@@ -3,7 +3,7 @@
 #include "AHT.h"
 #include "app_i2c.h"
 
-static int AHT1x_SENSOR = 0x00;
+static int AHT1x_SENSOR_1 = 0x00;
 static AHTXX_I2C_SENSOR _sensorType;
 static uint8_t _address;
 static uint8_t _status;
@@ -234,7 +234,7 @@ void _readMeasurement()
 	/* read data from sensor */
 	uint8_t dataSize;
 
-	if   (_sensorType == AHT1x_SENSOR) {dataSize = 6;}   //{status, RH, RH, RH+T, T, T, CRC*}, *CRC for AHT2x only
+	if   (_sensorType == AHT1x_SENSOR_1) {dataSize = 6;}   //{status, RH, RH, RH+T, T, T, CRC*}, *CRC for AHT2x only
 	else                               {dataSize = 7;}
 
 	i2c_read_from(_address,_rawData,dataSize,10,1);
@@ -261,7 +261,7 @@ void _readMeasurement()
 uint8_t _setInitializationRegister(uint8_t value)
 {
 	mDelaymS(AHTXX_CMD_DELAY);
-	if   (_sensorType == AHT1x_SENSOR) {	i2c_write_to(_address,AHT1X_INIT_REG,1,10,1);} //send initialization command, for AHT1x only
+	if   (_sensorType == AHT1x_SENSOR_1) {	i2c_write_to(_address,AHT1X_INIT_REG,1,10,1);} //send initialization command, for AHT1x only
 	else                               {	i2c_write_to(_address,AHT2X_INIT_REG,1,10,1);} //send initialization command, for AHT2x only
 
 	i2c_write_to(_address,value,1,10,1);
