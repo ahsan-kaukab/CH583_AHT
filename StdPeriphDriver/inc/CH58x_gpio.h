@@ -52,8 +52,8 @@ extern "C" {
 typedef enum
 {
     GPIO_ModeIN_Floating, //浮空输入
-    GPIO_ModeIN_PU,       //上拉输入
     GPIO_ModeIN_PD,       //下拉输入
+    GPIO_ModeIN_PU,       //上拉输入
     GPIO_ModeOut_PP_5mA,  //推挽输出最大5mA
     GPIO_ModeOut_PP_20mA, //推挽输出最大20mA
 

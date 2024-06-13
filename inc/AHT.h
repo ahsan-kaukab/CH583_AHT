@@ -64,7 +64,7 @@ typedef enum
   AHT2x_SENSOR = 0x01,
 } AHTXX_I2C_SENSOR;
 
-uint8_t begin(int32_t sda, int32_t scl, uint32_t speed, uint32_t stretch);
+uint8_t AHT_begin();
 
 float readHumidity(uint8_t readAHT);
 float readTemperature(uint8_t readAHT);
@@ -75,7 +75,6 @@ uint8_t softReset();
 uint8_t getStatus();
 void setType(AHTXX_I2C_SENSOR);
 
-uint8_t _rawData[7] = {0, 0, 0, 0, 0, 0, 0}; //{status, RH, RH, RH+T, T, T, CRC}, CRC for AHT2x only
 
 void _readMeasurement(); //TODO: IRAM_ATTR for ESP8266
 uint8_t _setInitializationRegister(uint8_t value);

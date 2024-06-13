@@ -7,8 +7,9 @@ static int AHT1x_SENSOR_1 = 0x00;
 static AHTXX_I2C_SENSOR _sensorType;
 static uint8_t _address;
 static uint8_t _status;
+static uint8_t _rawData[7] = {0, 0, 0, 0, 0, 0, 0}; //{status, RH, RH, RH+T, T, T, CRC}, CRC for AHT2x only
 
-uint8_t begin(int32_t sda, int32_t scl, uint32_t speed, uint32_t stretch) //"int32_t" for Master SDA & SCL, "uint8_t" for Slave SDA & SCL
+uint8_t AHT_begin() //"int32_t" for Master SDA & SCL, "uint8_t" for Slave SDA & SCL
 {
 	_address = AHTXX_ADDRESS_X38;
 	i2c_app_init(_address);

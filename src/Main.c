@@ -14,8 +14,10 @@
  * */
 
 #include "CH58x_common.h"
+#include "app_i2c.h"
+#include "AHT.h"
 
-uint8_t TxBuff[] = "This is a tx exam\r\n";
+uint8_t TxBuff[] = "Hello\r\n";
 uint8_t RxBuff[100];
 uint8_t trigB;
 
@@ -72,16 +74,30 @@ int main()
     GPIOA_ModeCfg(GPIO_Pin_8, GPIO_ModeIN_PU);      // RXD
     GPIOA_ModeCfg(GPIO_Pin_9, GPIO_ModeOut_PP_5mA); // TXD
     UART1_DefInit();
-    print_console();
-    button_press();
+    //print_console();
+    //button_press();
 
     GPIOA_SetBits(GPIO_Pin_0);
     GPIOA_ModeCfg(GPIO_Pin_0, GPIO_ModeOut_PP_20mA);
+
+    UART1_SendString(TxBuff, sizeof(TxBuff));
+
+    i2c_app_init(AHTXX_ADDRESS_X38);
+    AHT_begin();
+
+    UART1_SendString(TxBuff, sizeof(TxBuff));
+
+    mDelaymS(500);
     //mDelaymS(5000);
     while(1)
     {
-        GPIOA_SetBits(GPIO_Pin_0);
-        //mDelaymS(5000);
+        //GPIOA_SetBits(GPIO_Pin_0);
+    	UART1_SendString("Start", sizeof("Start"));
+    	UART1_SendByte(readHumidity(1));
+    	mDelaymS(100);
+    	UART1_SendByte(readHumidity(1));
+    	mDelaymS(100);
+
         //GPIOA_ResetBits(GPIO_Pin_0);
     }
 }
