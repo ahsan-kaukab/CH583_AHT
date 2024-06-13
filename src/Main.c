@@ -74,7 +74,16 @@ int main()
     UART1_DefInit();
     print_console();
     button_press();
-    while(1);
+
+    GPIOA_SetBits(GPIO_Pin_0);
+    GPIOA_ModeCfg(GPIO_Pin_0, GPIO_ModeOut_PP_20mA);
+    //mDelaymS(5000);
+    while(1)
+    {
+        GPIOA_SetBits(GPIO_Pin_0);
+        //mDelaymS(5000);
+        //GPIOA_ResetBits(GPIO_Pin_0);
+    }
 }
 
 /*********************************************************************
