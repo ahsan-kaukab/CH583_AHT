@@ -6,10 +6,10 @@ Archive member included to satisfy reference by file (symbol)
                               ./src/AHT.o (__mulsf3)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(subsf3.o)
                               ./src/AHT.o (__subsf3)
-/home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(fixunssfsi.o)
-                              ./src/Main.o (__fixunssfsi)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(floatunsisf.o)
                               ./src/AHT.o (__floatunsisf)
+/home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(extendsfdf2.o)
+                              ./src/Main.o (__extendsfdf2)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(_clzsi2.o)
                               /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(mulsf3.o) (__clzsi2)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(_clz.o)
@@ -22,6 +22,10 @@ Archive member included to satisfy reference by file (symbol)
                               ./StdPeriphDriver/CH58x_usb2hostClass.o (putchar)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-puts.o)
                               ./StdPeriphDriver/CH58x_usb2hostBase.o (puts)
+/home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-snprintf.o)
+                              ./src/Main.o (snprintf)
+/home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-strlen.o)
+                              ./src/Main.o (strlen)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-wbuf.o)
                               /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-puts.o) (__swbuf_r)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-wsetup.o)
@@ -42,10 +46,12 @@ Archive member included to satisfy reference by file (symbol)
                               /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-wsetup.o) (_free_r)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-mallocr.o)
                               /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-findfp.o) (_malloc_r)
+/home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-svfprintf.o)
+                              /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-snprintf.o) (_svfprintf_r)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf.o)
                               /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-printf.o) (_vfprintf_r)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf_i.o)
-                              /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf.o) (_printf_i)
+                              /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-svfprintf.o) (_printf_i)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-putc.o)
                               /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-putchar.o) (_putc_r)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-sbrkr.o)
@@ -65,13 +71,13 @@ Archive member included to satisfy reference by file (symbol)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-lseekr.o)
                               /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-stdio.o) (_lseek_r)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memchr.o)
-                              /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf.o) (memchr)
+                              /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-svfprintf.o) (memchr)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memmove.o)
-                              /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-fvwrite.o) (memmove)
+                              /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-svfprintf.o) (memmove)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-mlock.o)
                               /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-freer.o) (__malloc_lock)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-reallocr.o)
-                              /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-fvwrite.o) (_realloc_r)
+                              /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-svfprintf.o) (_realloc_r)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-readr.o)
                               /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-stdio.o) (_read_r)
 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-reent.o)
@@ -108,19 +114,18 @@ Discarded input sections
                 0x0000000000000000        0xc ./src/AHT.o
  .text._getBusy
                 0x0000000000000000       0x1e ./src/AHT.o
- .text.readTemperature
-                0x0000000000000000       0x90 ./src/AHT.o
- .rodata.readTemperature.cst4
-                0x0000000000000000        0x8 ./src/AHT.o
+ .text.readHumidity
+                0x0000000000000000       0x88 ./src/AHT.o
  .text          0x0000000000000000        0x0 ./src/Main.o
  .data          0x0000000000000000        0x0 ./src/Main.o
  .bss           0x0000000000000000        0x0 ./src/Main.o
- .text.print_console
-                0x0000000000000000       0x44 ./src/Main.o
  .text.button_press
                 0x0000000000000000       0x40 ./src/Main.o
  .text.switch_on
                 0x0000000000000000       0x3e ./src/Main.o
+ .bss.RxBuff    0x0000000000000000       0x64 ./src/Main.o
+ .sbss.trigB    0x0000000000000000        0x1 ./src/Main.o
+ .sdata.TxBuff  0x0000000000000000        0x8 ./src/Main.o
  .text          0x0000000000000000        0x0 ./src/app_i2c.o
  .data          0x0000000000000000        0x0 ./src/app_i2c.o
  .bss           0x0000000000000000        0x0 ./src/app_i2c.o
@@ -312,9 +317,6 @@ Discarded input sections
  .text.WWDG_ClearFlag
                 0x0000000000000000       0x6c ./StdPeriphDriver/CH58x_sys.o
  .text._write   0x0000000000000000       0x28 ./StdPeriphDriver/CH58x_sys.o
- .text._sbrk    0x0000000000000000       0x34 ./StdPeriphDriver/CH58x_sys.o
- .sdata.curbrk.4072
-                0x0000000000000000        0x4 ./StdPeriphDriver/CH58x_sys.o
  .text          0x0000000000000000        0x0 ./StdPeriphDriver/CH58x_uart0.o
  .data          0x0000000000000000        0x0 ./StdPeriphDriver/CH58x_uart0.o
  .bss           0x0000000000000000        0x0 ./StdPeriphDriver/CH58x_uart0.o
@@ -351,6 +353,8 @@ Discarded input sections
                 0x0000000000000000       0x2a ./StdPeriphDriver/CH58x_uart1.o
  .text.UART1_Reset
                 0x0000000000000000        0xe ./StdPeriphDriver/CH58x_uart1.o
+ .text.UART1_RecvString
+                0x0000000000000000       0x2a ./StdPeriphDriver/CH58x_uart1.o
  .text          0x0000000000000000        0x0 ./StdPeriphDriver/CH58x_usb2dev.o
  .data          0x0000000000000000        0x0 ./StdPeriphDriver/CH58x_usb2dev.o
  .bss           0x0000000000000000        0x0 ./StdPeriphDriver/CH58x_usb2dev.o
@@ -577,15 +581,12 @@ Discarded input sections
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(subsf3.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(subsf3.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(subsf3.o)
- .text.__subsf3
-                0x0000000000000000      0x38e /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(subsf3.o)
- .debug_frame   0x0000000000000000       0x3c /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(subsf3.o)
- .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(fixunssfsi.o)
- .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(fixunssfsi.o)
- .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(fixunssfsi.o)
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(floatunsisf.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(floatunsisf.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(floatunsisf.o)
+ .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(extendsfdf2.o)
+ .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(extendsfdf2.o)
+ .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(extendsfdf2.o)
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(_clzsi2.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(_clzsi2.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(_clzsi2.o)
@@ -615,6 +616,14 @@ Discarded input sections
  .text._puts_r  0x0000000000000000       0xf8 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-puts.o)
  .text.puts     0x0000000000000000       0x14 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-puts.o)
  .debug_frame   0x0000000000000000       0x54 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-puts.o)
+ .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-snprintf.o)
+ .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-snprintf.o)
+ .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-snprintf.o)
+ .text._snprintf_r
+                0x0000000000000000       0x6e /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-snprintf.o)
+ .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-strlen.o)
+ .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-strlen.o)
+ .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-strlen.o)
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-wbuf.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-wbuf.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-wbuf.o)
@@ -665,13 +674,6 @@ Discarded input sections
                 0x0000000000000000       0x1a /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-findfp.o)
  .text.__fp_unlock_all
                 0x0000000000000000       0x1a /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-findfp.o)
- .rodata.__sf_fake_stderr
-                0x0000000000000000       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-findfp.o)
- .rodata.__sf_fake_stdin
-                0x0000000000000000       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-findfp.o)
- .rodata.__sf_fake_stdout
-                0x0000000000000000       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-findfp.o)
- .debug_frame   0x0000000000000000      0x148 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-findfp.o)
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-fwalk.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-fwalk.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-fwalk.o)
@@ -682,10 +684,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-impure.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-impure.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-impure.o)
- .data.impure_data
-                0x0000000000000000       0x60 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-impure.o)
- .sdata._impure_ptr
-                0x0000000000000000        0x4 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-impure.o)
  .sdata2._global_impure_ptr
                 0x0000000000000000        0x4 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-impure.o)
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-makebuf.o)
@@ -702,18 +700,14 @@ Discarded input sections
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-freer.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-freer.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-freer.o)
- .text._free_r  0x0000000000000000       0xb8 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-freer.o)
- .debug_frame   0x0000000000000000       0x40 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-freer.o)
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-mallocr.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-mallocr.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-mallocr.o)
- .text._malloc_r
-                0x0000000000000000      0x102 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-mallocr.o)
- .sbss.__malloc_free_list
-                0x0000000000000000        0x4 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-mallocr.o)
- .sbss.__malloc_sbrk_start
-                0x0000000000000000        0x4 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-mallocr.o)
- .debug_frame   0x0000000000000000       0x40 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-mallocr.o)
+ .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-svfprintf.o)
+ .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-svfprintf.o)
+ .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-svfprintf.o)
+ .text.__ssprint_r
+                0x0000000000000000      0x148 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-svfprintf.o)
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf.o)
@@ -733,13 +727,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf_i.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf_i.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf_i.o)
- .text._printf_common
-                0x0000000000000000      0x10c /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf_i.o)
- .text._printf_i
-                0x0000000000000000      0x2b4 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf_i.o)
- .rodata._printf_i.str1.4
-                0x0000000000000000       0x25 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf_i.o)
- .debug_frame   0x0000000000000000       0x8c /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf_i.o)
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-putc.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-putc.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-putc.o)
@@ -749,8 +736,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-sbrkr.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-sbrkr.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-sbrkr.o)
- .text._sbrk_r  0x0000000000000000       0x36 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-sbrkr.o)
- .debug_frame   0x0000000000000000       0x30 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-sbrkr.o)
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-stdio.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-stdio.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-stdio.o)
@@ -802,27 +787,15 @@ Discarded input sections
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memchr.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memchr.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memchr.o)
- .text.memchr   0x0000000000000000       0x1a /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memchr.o)
- .debug_frame   0x0000000000000000       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memchr.o)
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memmove.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memmove.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memmove.o)
- .text.memmove  0x0000000000000000       0x4a /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memmove.o)
- .debug_frame   0x0000000000000000       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memmove.o)
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-mlock.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-mlock.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-mlock.o)
- .text.__malloc_lock
-                0x0000000000000000        0x2 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-mlock.o)
- .text.__malloc_unlock
-                0x0000000000000000        0x2 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-mlock.o)
- .debug_frame   0x0000000000000000       0x30 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-mlock.o)
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-reallocr.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-reallocr.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-reallocr.o)
- .text._realloc_r
-                0x0000000000000000       0x72 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-reallocr.o)
- .debug_frame   0x0000000000000000       0x40 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-reallocr.o)
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-readr.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-readr.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-readr.o)
@@ -835,14 +808,9 @@ Discarded input sections
                 0x0000000000000000       0x2c /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-reent.o)
  .text._reclaim_reent
                 0x0000000000000000      0x10c /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-reent.o)
- .debug_frame   0x0000000000000000       0x70 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-reent.o)
- COMMON         0x0000000000000000        0x4 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-reent.o)
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-msizer.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-msizer.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-msizer.o)
- .text._malloc_usable_size_r
-                0x0000000000000000       0x14 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-msizer.o)
- .debug_frame   0x0000000000000000       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-msizer.o)
  .text          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libnosys.a(close.o)
  .data          0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libnosys.a(close.o)
  .bss           0x0000000000000000        0x0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libnosys.a(close.o)
@@ -936,7 +904,7 @@ END GROUP
                 0x0000000000000004                . = ALIGN (0x4)
                 0x0000000000000004                PROVIDE (_highcode_lma = .)
 
-.highcode       0x0000000020000000      0xe6c load address 0x0000000000000004
+.highcode       0x0000000020000000      0xdd4 load address 0x0000000000000004
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                PROVIDE (_highcode_vma_start = .)
  *(.vector)
@@ -948,6 +916,7 @@ END GROUP
                 0x0000000020000090                GPIOA_IRQHandler
                 0x0000000020000090                SysTick_Handler
                 0x0000000020000090                NMI_Handler
+                0x0000000020000090                UART1_IRQHandler
                 0x0000000020000090                UART0_IRQHandler
                 0x0000000020000090                BB_IRQHandler
                 0x0000000020000090                Break_Point_Handler
@@ -969,189 +938,261 @@ END GROUP
                 0x0000000020000090                UART3_IRQHandler
                 0x0000000020000090                TMR1_IRQHandler
  *(.highcode)
- .highcode      0x0000000020000092       0x96 ./src/Main.o
-                0x0000000020000092                UART1_IRQHandler
- .highcode      0x0000000020000128      0x430 ./src/app_i2c.o
-                0x0000000020000128                I2C_IRQHandler
- .highcode      0x0000000020000558      0x4ec ./StdPeriphDriver/CH58x_sys.o
-                0x0000000020000558                SetSysClock
-                0x00000000200008de                SYS_ResetExecute
-                0x0000000020000950                HardFault_Handler
-                0x0000000020000a0e                mDelayuS
-                0x0000000020000a1c                mDelaymS
- .highcode      0x0000000020000a44      0x426 ../StdPeriphDriver/libISP583.a(ISP583.o)
-                0x0000000020000a44                FLASH_ROM_BEG
-                0x0000000020000a56                FLASH_ROM_END
-                0x0000000020000a64                FLASH_ROM_IN
-                0x0000000020000a72                FLASH_ROM_OUT
-                0x0000000020000a80                FLASH_ROM_ADDR
-                0x0000000020000ac8                FLASH_ROM_WAIT
-                0x0000000020000b00                FLASH_EEPROM_CMD
+ .highcode      0x0000000020000092      0x430 ./src/app_i2c.o
+                0x0000000020000092                I2C_IRQHandler
+ .highcode      0x00000000200004c2      0x4ec ./StdPeriphDriver/CH58x_sys.o
+                0x00000000200004c2                SetSysClock
+                0x0000000020000848                SYS_ResetExecute
+                0x00000000200008ba                HardFault_Handler
+                0x0000000020000978                mDelayuS
+                0x0000000020000986                mDelaymS
+ .highcode      0x00000000200009ae      0x426 ../StdPeriphDriver/libISP583.a(ISP583.o)
+                0x00000000200009ae                FLASH_ROM_BEG
+                0x00000000200009c0                FLASH_ROM_END
+                0x00000000200009ce                FLASH_ROM_IN
+                0x00000000200009dc                FLASH_ROM_OUT
+                0x00000000200009ea                FLASH_ROM_ADDR
+                0x0000000020000a32                FLASH_ROM_WAIT
+                0x0000000020000a6a                FLASH_EEPROM_CMD
  *(.highcode.*)
-                0x0000000020000e6c                . = ALIGN (0x4)
- *fill*         0x0000000020000e6a        0x2 
-                0x0000000020000e6c                PROVIDE (_highcode_vma_end = .)
+                0x0000000020000dd4                . = ALIGN (0x4)
+                0x0000000020000dd4                PROVIDE (_highcode_vma_end = .)
 
-.text           0x0000000000000e70     0x10e0
-                0x0000000000000e70                . = ALIGN (0x4)
+.text           0x0000000000000dd8     0x1fb8
+                0x0000000000000dd8                . = ALIGN (0x4)
  *(SORT_NONE(.handle_reset))
- .handle_reset  0x0000000000000e70       0xaa ./Startup/startup_CH583.o
-                0x0000000000000e70                handle_reset
+ .handle_reset  0x0000000000000dd8       0xaa ./Startup/startup_CH583.o
+                0x0000000000000dd8                handle_reset
  *(.text)
  *(.text.*)
  .text._getBusy.part.0
-                0x0000000000000f1a       0x22 ./src/AHT.o
+                0x0000000000000e82       0x22 ./src/AHT.o
  .text._setInitializationRegister
-                0x0000000000000f3c       0x54 ./src/AHT.o
-                0x0000000000000f3c                _setInitializationRegister
+                0x0000000000000ea4       0x54 ./src/AHT.o
+                0x0000000000000ea4                _setInitializationRegister
  .text.setNormalMode
-                0x0000000000000f90        0x4 ./src/AHT.o
-                0x0000000000000f90                setNormalMode
+                0x0000000000000ef8        0x4 ./src/AHT.o
+                0x0000000000000ef8                setNormalMode
  .text._readStatusRegister
-                0x0000000000000f94       0x46 ./src/AHT.o
-                0x0000000000000f94                _readStatusRegister
+                0x0000000000000efc       0x46 ./src/AHT.o
+                0x0000000000000efc                _readStatusRegister
  .text._getCalibration
-                0x0000000000000fda       0x16 ./src/AHT.o
-                0x0000000000000fda                _getCalibration
+                0x0000000000000f42       0x16 ./src/AHT.o
+                0x0000000000000f42                _getCalibration
  .text.softReset
-                0x0000000000000ff0       0x38 ./src/AHT.o
-                0x0000000000000ff0                softReset
+                0x0000000000000f58       0x38 ./src/AHT.o
+                0x0000000000000f58                softReset
  .text.AHT_begin
-                0x0000000000001028       0x24 ./src/AHT.o
-                0x0000000000001028                AHT_begin
+                0x0000000000000f90       0x24 ./src/AHT.o
+                0x0000000000000f90                AHT_begin
  .text._checkCRC8
-                0x000000000000104c       0x5e ./src/AHT.o
-                0x000000000000104c                _checkCRC8
+                0x0000000000000fb4       0x5e ./src/AHT.o
+                0x0000000000000fb4                _checkCRC8
  .text._readMeasurement
-                0x00000000000010aa       0x74 ./src/AHT.o
-                0x00000000000010aa                _readMeasurement
- .text.readHumidity
-                0x000000000000111e       0x66 ./src/AHT.o
-                0x000000000000111e                readHumidity
+                0x0000000000001012       0x74 ./src/AHT.o
+                0x0000000000001012                _readMeasurement
+ .text.readTemperature
+                0x0000000000001086       0x6a ./src/AHT.o
+                0x0000000000001086                readTemperature
+ .text.sendFloatOverUART
+                0x00000000000010f0       0x34 ./src/Main.o
+                0x00000000000010f0                sendFloatOverUART
  .text.startup.main
-                0x0000000000001184       0xc6 ./src/Main.o
-                0x0000000000001184                main
+                0x0000000000001124       0xaa ./src/Main.o
+                0x0000000000001124                main
  .text.i2c_app_init
-                0x000000000000124a       0x5a ./src/app_i2c.o
-                0x000000000000124a                i2c_app_init
+                0x00000000000011ce       0x5a ./src/app_i2c.o
+                0x00000000000011ce                i2c_app_init
  .text.i2c_write_to
-                0x00000000000012a4       0xd6 ./src/app_i2c.o
-                0x00000000000012a4                i2c_write_to
+                0x0000000000001228       0xd6 ./src/app_i2c.o
+                0x0000000000001228                i2c_write_to
  .text.i2c_read_from
-                0x000000000000137a      0x102 ./src/app_i2c.o
-                0x000000000000137a                i2c_read_from
+                0x00000000000012fe      0x102 ./src/app_i2c.o
+                0x00000000000012fe                i2c_read_from
  .text.GPIOA_ModeCfg
-                0x000000000000147c       0xa6 ./StdPeriphDriver/CH58x_gpio.o
-                0x000000000000147c                GPIOA_ModeCfg
+                0x0000000000001400       0xa6 ./StdPeriphDriver/CH58x_gpio.o
+                0x0000000000001400                GPIOA_ModeCfg
  .text.GPIOB_ModeCfg
-                0x0000000000001522       0xa6 ./StdPeriphDriver/CH58x_gpio.o
-                0x0000000000001522                GPIOB_ModeCfg
+                0x00000000000014a6       0xa6 ./StdPeriphDriver/CH58x_gpio.o
+                0x00000000000014a6                GPIOB_ModeCfg
  .text.I2C_GenerateSTART
-                0x00000000000015c8       0x22 ./StdPeriphDriver/CH58x_i2c.o
-                0x00000000000015c8                I2C_GenerateSTART
+                0x000000000000154c       0x22 ./StdPeriphDriver/CH58x_i2c.o
+                0x000000000000154c                I2C_GenerateSTART
  .text.I2C_GenerateSTOP
-                0x00000000000015ea       0x22 ./StdPeriphDriver/CH58x_i2c.o
-                0x00000000000015ea                I2C_GenerateSTOP
+                0x000000000000156e       0x22 ./StdPeriphDriver/CH58x_i2c.o
+                0x000000000000156e                I2C_GenerateSTOP
  .text.I2C_AcknowledgeConfig
-                0x000000000000160c       0x22 ./StdPeriphDriver/CH58x_i2c.o
-                0x000000000000160c                I2C_AcknowledgeConfig
+                0x0000000000001590       0x22 ./StdPeriphDriver/CH58x_i2c.o
+                0x0000000000001590                I2C_AcknowledgeConfig
  .text.I2C_ITConfig
-                0x000000000000162e       0x1e ./StdPeriphDriver/CH58x_i2c.o
-                0x000000000000162e                I2C_ITConfig
+                0x00000000000015b2       0x1e ./StdPeriphDriver/CH58x_i2c.o
+                0x00000000000015b2                I2C_ITConfig
  .text.I2C_SendData
-                0x000000000000164c        0xa ./StdPeriphDriver/CH58x_i2c.o
-                0x000000000000164c                I2C_SendData
+                0x00000000000015d0        0xa ./StdPeriphDriver/CH58x_i2c.o
+                0x00000000000015d0                I2C_SendData
  .text.I2C_ReceiveData
-                0x0000000000001656        0xe ./StdPeriphDriver/CH58x_i2c.o
-                0x0000000000001656                I2C_ReceiveData
+                0x00000000000015da        0xe ./StdPeriphDriver/CH58x_i2c.o
+                0x00000000000015da                I2C_ReceiveData
  .text.I2C_SoftwareResetCmd
-                0x0000000000001664       0x1a ./StdPeriphDriver/CH58x_i2c.o
-                0x0000000000001664                I2C_SoftwareResetCmd
+                0x00000000000015e8       0x1a ./StdPeriphDriver/CH58x_i2c.o
+                0x00000000000015e8                I2C_SoftwareResetCmd
  .text.I2C_Init
-                0x000000000000167e      0x156 ./StdPeriphDriver/CH58x_i2c.o
-                0x000000000000167e                I2C_Init
+                0x0000000000001602      0x156 ./StdPeriphDriver/CH58x_i2c.o
+                0x0000000000001602                I2C_Init
  .text.I2C_GetLastEvent
-                0x00000000000017d4       0x16 ./StdPeriphDriver/CH58x_i2c.o
-                0x00000000000017d4                I2C_GetLastEvent
+                0x0000000000001758       0x16 ./StdPeriphDriver/CH58x_i2c.o
+                0x0000000000001758                I2C_GetLastEvent
  .text.I2C_ClearFlag
-                0x00000000000017ea       0x12 ./StdPeriphDriver/CH58x_i2c.o
-                0x00000000000017ea                I2C_ClearFlag
+                0x000000000000176e       0x12 ./StdPeriphDriver/CH58x_i2c.o
+                0x000000000000176e                I2C_ClearFlag
  .text.GetSysClock
-                0x00000000000017fc       0x42 ./StdPeriphDriver/CH58x_sys.o
-                0x00000000000017fc                GetSysClock
+                0x0000000000001780       0x42 ./StdPeriphDriver/CH58x_sys.o
+                0x0000000000001780                GetSysClock
+ .text._sbrk    0x00000000000017c2       0x30 ./StdPeriphDriver/CH58x_sys.o
+                0x00000000000017c2                _sbrk
  .text.UART1_BaudRateCfg
-                0x000000000000183e       0x30 ./StdPeriphDriver/CH58x_uart1.o
-                0x000000000000183e                UART1_BaudRateCfg
+                0x00000000000017f2       0x30 ./StdPeriphDriver/CH58x_uart1.o
+                0x00000000000017f2                UART1_BaudRateCfg
  .text.UART1_DefInit
-                0x000000000000186e       0x32 ./StdPeriphDriver/CH58x_uart1.o
-                0x000000000000186e                UART1_DefInit
+                0x0000000000001822       0x32 ./StdPeriphDriver/CH58x_uart1.o
+                0x0000000000001822                UART1_DefInit
  .text.UART1_SendString
-                0x00000000000018a0       0x28 ./StdPeriphDriver/CH58x_uart1.o
-                0x00000000000018a0                UART1_SendString
- .text.UART1_RecvString
-                0x00000000000018c8       0x2a ./StdPeriphDriver/CH58x_uart1.o
-                0x00000000000018c8                UART1_RecvString
+                0x0000000000001854       0x28 ./StdPeriphDriver/CH58x_uart1.o
+                0x0000000000001854                UART1_SendString
  .text.__mulsf3
-                0x00000000000018f2      0x290 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(mulsf3.o)
-                0x00000000000018f2                __mulsf3
- .text.__fixunssfsi
-                0x0000000000001b82       0x56 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(fixunssfsi.o)
-                0x0000000000001b82                __fixunssfsi
+                0x000000000000187c      0x290 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(mulsf3.o)
+                0x000000000000187c                __mulsf3
+ .text.__subsf3
+                0x0000000000001b0c      0x388 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(subsf3.o)
+                0x0000000000001b0c                __subsf3
  .text.__floatunsisf
-                0x0000000000001bd8       0xce /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(floatunsisf.o)
-                0x0000000000001bd8                __floatunsisf
+                0x0000000000001e94       0xce /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(floatunsisf.o)
+                0x0000000000001e94                __floatunsisf
+ .text.__extendsfdf2
+                0x0000000000001f62       0xac /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(extendsfdf2.o)
+                0x0000000000001f62                __extendsfdf2
  .text.__clzsi2
-                0x0000000000001ca6       0x76 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(_clzsi2.o)
-                0x0000000000001ca6                __clzsi2
- .text.memcpy   0x0000000000001d1c       0xb6 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memcpy.o)
-                0x0000000000001d1c                memcpy
+                0x000000000000200e       0x76 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(_clzsi2.o)
+                0x000000000000200e                __clzsi2
+ .text.memcpy   0x0000000000002084       0xb6 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memcpy.o)
+                0x0000000000002084                memcpy
+ .text.snprintf
+                0x000000000000213a       0x72 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-snprintf.o)
+                0x000000000000213a                snprintf
+                0x000000000000213a                sniprintf
+ .text.strlen   0x00000000000021ac       0x12 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-strlen.o)
+                0x00000000000021ac                strlen
+ .text._free_r  0x00000000000021be       0xa8 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-freer.o)
+                0x00000000000021be                _free_r
+ .text._malloc_r
+                0x0000000000002266       0xd8 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-mallocr.o)
+                0x0000000000002266                _malloc_r
+ .text.__ssputs_r
+                0x000000000000233e       0xe4 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-svfprintf.o)
+                0x000000000000233e                __ssputs_r
+ .text._svfprintf_r
+                0x0000000000002422      0x276 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-svfprintf.o)
+                0x0000000000002422                _svfprintf_r
+                0x0000000000002422                _svfiprintf_r
+ .text._printf_common
+                0x0000000000002698      0x10c /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0000000000002698                _printf_common
+ .text._printf_i
+                0x00000000000027a4      0x2a8 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x00000000000027a4                _printf_i
+ .text._sbrk_r  0x0000000000002a4c       0x2a /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-sbrkr.o)
+                0x0000000000002a4c                _sbrk_r
+ .text.memchr   0x0000000000002a76       0x1a /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memchr.o)
+                0x0000000000002a76                memchr
+ .text.memmove  0x0000000000002a90       0x4a /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memmove.o)
+                0x0000000000002a90                memmove
+ .text.__malloc_lock
+                0x0000000000002ada        0x2 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-mlock.o)
+                0x0000000000002ada                __malloc_lock
+ .text.__malloc_unlock
+                0x0000000000002adc        0x2 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-mlock.o)
+                0x0000000000002adc                __malloc_unlock
+ .text._realloc_r
+                0x0000000000002ade       0x58 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-reallocr.o)
+                0x0000000000002ade                _realloc_r
+ .text._malloc_usable_size_r
+                0x0000000000002b36       0x14 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-msizer.o)
+                0x0000000000002b36                _malloc_usable_size_r
  *(.rodata)
  *(.rodata*)
- *fill*         0x0000000000001dd2        0x2 
+ *fill*         0x0000000000002b4a        0x2 
  .rodata.readHumidity.cst4
-                0x0000000000001dd4        0xc ./src/AHT.o
+                0x0000000000002b4c        0xc ./src/AHT.o
+ .rodata.readTemperature.cst4
+                0x0000000000002b58        0x8 ./src/AHT.o
  .rodata.main.str1.4
-                0x0000000000001de0        0x8 ./src/Main.o
-                                          0x6 (size before relaxing)
+                0x0000000000002b60       0x22 ./src/Main.o
+ *fill*         0x0000000000002b82        0x2 
+ .rodata.sendFloatOverUART.str1.4
+                0x0000000000002b84        0x5 ./src/Main.o
+ *fill*         0x0000000000002b89        0x3 
  .rodata.GPIOA_ModeCfg
-                0x0000000000001de8       0x14 ./StdPeriphDriver/CH58x_gpio.o
+                0x0000000000002b8c       0x14 ./StdPeriphDriver/CH58x_gpio.o
  .rodata.GPIOB_ModeCfg
-                0x0000000000001dfc       0x14 ./StdPeriphDriver/CH58x_gpio.o
+                0x0000000000002ba0       0x14 ./StdPeriphDriver/CH58x_gpio.o
  .rodata.__mulsf3
-                0x0000000000001e10       0x40 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(mulsf3.o)
+                0x0000000000002bb4       0x40 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(mulsf3.o)
  .rodata.__clz_tab
-                0x0000000000001e50      0x100 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(_clz.o)
-                0x0000000000001e50                __clz_tab
+                0x0000000000002bf4      0x100 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(_clz.o)
+                0x0000000000002bf4                __clz_tab
+ .rodata.__sf_fake_stderr
+                0x0000000000002cf4       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-findfp.o)
+                0x0000000000002cf4                __sf_fake_stderr
+ .rodata.__sf_fake_stdin
+                0x0000000000002d14       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-findfp.o)
+                0x0000000000002d14                __sf_fake_stdin
+ .rodata.__sf_fake_stdout
+                0x0000000000002d34       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-findfp.o)
+                0x0000000000002d34                __sf_fake_stdout
+ .rodata._svfprintf_r.str1.4
+                0x0000000000002d54       0x13 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-svfprintf.o)
+ *fill*         0x0000000000002d67        0x1 
+ .rodata._printf_i.str1.4
+                0x0000000000002d68       0x28 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf_i.o)
+                                         0x25 (size before relaxing)
  *(.sdata2.*)
  *(.glue_7)
  *(.glue_7t)
  *(.gnu.linkonce.t.*)
-                0x0000000000001f50                . = ALIGN (0x4)
+                0x0000000000002d90                . = ALIGN (0x4)
 
-.rela.dyn       0x0000000000001f50        0x0
- .rela.init     0x0000000000001f50        0x0 ./src/AHT.o
- .rela.vector   0x0000000000001f50        0x0 ./src/AHT.o
+.rela.dyn       0x0000000000002d90        0x0
+ .rela.text._sbrk
+                0x0000000000002d90        0x0 ./src/AHT.o
+ .rela.sdata.curbrk.4072
+                0x0000000000002d90        0x0 ./src/AHT.o
+ .rela.init     0x0000000000002d90        0x0 ./src/AHT.o
+ .rela.vector   0x0000000000002d90        0x0 ./src/AHT.o
  .rela.handle_reset
-                0x0000000000001f50        0x0 ./src/AHT.o
+                0x0000000000002d90        0x0 ./src/AHT.o
+ .rela.text._svfprintf_r
+                0x0000000000002d90        0x0 ./src/AHT.o
+ .rela.text._sbrk_r
+                0x0000000000002d90        0x0 ./src/AHT.o
 
-.fini           0x0000000000001f50        0x0
+.fini           0x0000000000002d90        0x0
  *(SORT_NONE(.fini))
-                0x0000000000001f50                . = ALIGN (0x4)
+                0x0000000000002d90                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (_etext = .)
                 [!provide]                        PROVIDE (_eitcm = .)
 
-.preinit_array  0x0000000000001f50        0x0
+.preinit_array  0x0000000000002d90        0x0
                 [!provide]                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
                 [!provide]                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x0000000000001f50        0x0
+.init_array     0x0000000000002d90        0x0
                 [!provide]                        PROVIDE (__init_array_start = .)
  *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
  *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
                 [!provide]                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x0000000000001f50        0x0
+.fini_array     0x0000000000002d90        0x0
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
  *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
@@ -1171,92 +1212,100 @@ END GROUP
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
 
-.dalign         0x0000000020000e6c        0x0 load address 0x0000000000001f50
-                0x0000000020000e6c                . = (ORIGIN (RAM) + SIZEOF (.highcode))
+.dalign         0x0000000020000dd4        0x0 load address 0x0000000000002d90
+                0x0000000020000dd4                . = (ORIGIN (RAM) + SIZEOF (.highcode))
 
-.dlalign        0x0000000000001f50        0x0
-                0x0000000000001f50                . = ALIGN (0x4)
-                0x0000000000001f50                PROVIDE (_data_lma = .)
+.dlalign        0x0000000000002d90        0x0
+                0x0000000000002d90                . = ALIGN (0x4)
+                0x0000000000002d90                PROVIDE (_data_lma = .)
 
-.data           0x0000000020000e6c        0xc load address 0x0000000000001f50
-                0x0000000020000e6c                . = ALIGN (0x4)
-                0x0000000020000e6c                PROVIDE (_data_vma = .)
+.data           0x0000000020000dd4       0x6c load address 0x0000000000002d90
+                0x0000000020000dd4                . = ALIGN (0x4)
+                0x0000000020000dd4                PROVIDE (_data_vma = .)
  *(.gnu.linkonce.r.*)
  *(.data .data.*)
+ .data.impure_data
+                0x0000000020000dd4       0x60 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-impure.o)
  *(.gnu.linkonce.d.*)
-                0x0000000020000e70                . = ALIGN (0x8)
- *fill*         0x0000000020000e6c        0x4 
-                0x0000000020001670                PROVIDE (__global_pointer$ = (. + 0x800))
+                0x0000000020000e38                . = ALIGN (0x8)
+ *fill*         0x0000000020000e34        0x4 
+                0x0000000020001638                PROVIDE (__global_pointer$ = (. + 0x800))
  *(.sdata .sdata.*)
- .sdata.TxBuff  0x0000000020000e70        0x8 ./src/Main.o
-                0x0000000020000e70                TxBuff
+ .sdata.curbrk.4072
+                0x0000000020000e38        0x4 ./StdPeriphDriver/CH58x_sys.o
+ .sdata._impure_ptr
+                0x0000000020000e3c        0x4 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-impure.o)
+                0x0000000020000e3c                _impure_ptr
  *(.gnu.linkonce.s.*)
-                0x0000000020000e78                . = ALIGN (0x8)
+                0x0000000020000e40                . = ALIGN (0x8)
  *(.srodata.cst16)
  *(.srodata.cst8)
  *(.srodata.cst4)
  *(.srodata.cst2)
  *(.srodata .srodata.*)
-                0x0000000020000e78                . = ALIGN (0x4)
-                0x0000000020000e78                PROVIDE (_edata = .)
+                0x0000000020000e40                . = ALIGN (0x4)
+                0x0000000020000e40                PROVIDE (_edata = .)
 
-.bss            0x0000000020000e78       0xec load address 0x0000000000001f5c
-                0x0000000020000e78                . = ALIGN (0x4)
-                0x0000000020000e78                PROVIDE (_sbss = .)
+.bss            0x0000000020000e40       0x90 load address 0x0000000000002dfc
+                0x0000000020000e40                . = ALIGN (0x4)
+                0x0000000020000e40                PROVIDE (_sbss = .)
  *(.sbss*)
  .sbss._address
-                0x0000000020000e78        0x1 ./src/AHT.o
- *fill*         0x0000000020000e79        0x3 
+                0x0000000020000e40        0x1 ./src/AHT.o
+ *fill*         0x0000000020000e41        0x3 
  .sbss._rawData
-                0x0000000020000e7c        0x7 ./src/AHT.o
- *fill*         0x0000000020000e83        0x1 
+                0x0000000020000e44        0x7 ./src/AHT.o
+ *fill*         0x0000000020000e4b        0x1 
  .sbss._sensorType
-                0x0000000020000e84        0x4 ./src/AHT.o
- .sbss._status  0x0000000020000e88        0x1 ./src/AHT.o
- .sbss.trigB    0x0000000020000e89        0x1 ./src/Main.o
-                0x0000000020000e89                trigB
+                0x0000000020000e4c        0x4 ./src/AHT.o
+ .sbss._status  0x0000000020000e50        0x1 ./src/AHT.o
  .sbss.i2c_error
-                0x0000000020000e8a        0x1 ./src/app_i2c.o
+                0x0000000020000e51        0x1 ./src/app_i2c.o
  .sbss.i2c_in_repstart
-                0x0000000020000e8b        0x1 ./src/app_i2c.o
+                0x0000000020000e52        0x1 ./src/app_i2c.o
  .sbss.i2c_master_buffer_index
-                0x0000000020000e8c        0x1 ./src/app_i2c.o
+                0x0000000020000e53        0x1 ./src/app_i2c.o
  .sbss.i2c_master_buffer_length
-                0x0000000020000e8d        0x1 ./src/app_i2c.o
+                0x0000000020000e54        0x1 ./src/app_i2c.o
  .sbss.i2c_send_stop
-                0x0000000020000e8e        0x1 ./src/app_i2c.o
+                0x0000000020000e55        0x1 ./src/app_i2c.o
  .sbss.i2c_slave_addr_rw
-                0x0000000020000e8f        0x1 ./src/app_i2c.o
+                0x0000000020000e56        0x1 ./src/app_i2c.o
  .sbss.i2c_slave_rxbuffer_index
-                0x0000000020000e90        0x1 ./src/app_i2c.o
+                0x0000000020000e57        0x1 ./src/app_i2c.o
  .sbss.i2c_slave_txbuffer_index
-                0x0000000020000e91        0x1 ./src/app_i2c.o
+                0x0000000020000e58        0x1 ./src/app_i2c.o
  .sbss.i2c_slave_txbuffer_length
-                0x0000000020000e92        0x1 ./src/app_i2c.o
+                0x0000000020000e59        0x1 ./src/app_i2c.o
  .sbss.i2c_state
-                0x0000000020000e93        0x1 ./src/app_i2c.o
+                0x0000000020000e5a        0x1 ./src/app_i2c.o
  .sbss.is_nack_sent
-                0x0000000020000e94        0x1 ./src/app_i2c.o
- *fill*         0x0000000020000e95        0x3 
+                0x0000000020000e5b        0x1 ./src/app_i2c.o
  .sbss.slave_cb
-                0x0000000020000e98        0x4 ./src/app_i2c.o
- .sbss.IRQ_STA  0x0000000020000e9c        0x4 ./StdPeriphDriver/CH58x_sys.o
-                0x0000000020000e9c                IRQ_STA
+                0x0000000020000e5c        0x4 ./src/app_i2c.o
+ .sbss.IRQ_STA  0x0000000020000e60        0x4 ./StdPeriphDriver/CH58x_sys.o
+                0x0000000020000e60                IRQ_STA
+ .sbss.__malloc_free_list
+                0x0000000020000e64        0x4 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-mallocr.o)
+                0x0000000020000e64                __malloc_free_list
+ .sbss.__malloc_sbrk_start
+                0x0000000020000e68        0x4 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-mallocr.o)
+                0x0000000020000e68                __malloc_sbrk_start
  *(.gnu.linkonce.sb.*)
  *(.bss*)
- .bss.RxBuff    0x0000000020000ea0       0x64 ./src/Main.o
-                0x0000000020000ea0                RxBuff
  .bss.i2c_master_buffer
-                0x0000000020000f04       0x20 ./src/app_i2c.o
+                0x0000000020000e6c       0x20 ./src/app_i2c.o
  .bss.i2c_slave_rxbuffer
-                0x0000000020000f24       0x20 ./src/app_i2c.o
+                0x0000000020000e8c       0x20 ./src/app_i2c.o
  .bss.i2c_slave_txbuffer
-                0x0000000020000f44       0x20 ./src/app_i2c.o
+                0x0000000020000eac       0x20 ./src/app_i2c.o
  *(.gnu.linkonce.b.*)
  *(COMMON*)
-                0x0000000020000f64                . = ALIGN (0x4)
-                0x0000000020000f64                PROVIDE (_ebss = .)
-                0x0000000020000f64                PROVIDE (_end = _ebss)
+ COMMON         0x0000000020000ecc        0x4 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-reent.o)
+                0x0000000020000ecc                errno
+                0x0000000020000ed0                . = ALIGN (0x4)
+                0x0000000020000ed0                PROVIDE (_ebss = .)
+                0x0000000020000ed0                PROVIDE (_end = _ebss)
                 [!provide]                        PROVIDE (end = .)
 
 .stack          0x0000000020007e00      0x200
@@ -1268,89 +1317,89 @@ END GROUP
                 0x0000000020008000                PROVIDE (_eusrstack = .)
 OUTPUT(binmy_code_new.elf elf32-littleriscv)
 
-.debug_info     0x0000000000000000     0x8600
+.debug_info     0x0000000000000000     0x85ba
  .debug_info    0x0000000000000000      0xfdc ./src/AHT.o
- .debug_info    0x0000000000000fdc     0x10ad ./src/Main.o
- .debug_info    0x0000000000002089     0x1a6b ./src/app_i2c.o
- .debug_info    0x0000000000003af4      0xe73 ./StdPeriphDriver/CH58x_gpio.o
- .debug_info    0x0000000000004967     0x13ca ./StdPeriphDriver/CH58x_i2c.o
- .debug_info    0x0000000000005d31     0x1a62 ./StdPeriphDriver/CH58x_sys.o
- .debug_info    0x0000000000007793      0xe4b ./StdPeriphDriver/CH58x_uart1.o
- .debug_info    0x00000000000085de       0x22 ./Startup/startup_CH583.o
+ .debug_info    0x0000000000000fdc     0x1067 ./src/Main.o
+ .debug_info    0x0000000000002043     0x1a6b ./src/app_i2c.o
+ .debug_info    0x0000000000003aae      0xe73 ./StdPeriphDriver/CH58x_gpio.o
+ .debug_info    0x0000000000004921     0x13ca ./StdPeriphDriver/CH58x_i2c.o
+ .debug_info    0x0000000000005ceb     0x1a62 ./StdPeriphDriver/CH58x_sys.o
+ .debug_info    0x000000000000774d      0xe4b ./StdPeriphDriver/CH58x_uart1.o
+ .debug_info    0x0000000000008598       0x22 ./Startup/startup_CH583.o
 
-.debug_abbrev   0x0000000000000000     0x17d6
+.debug_abbrev   0x0000000000000000     0x17e9
  .debug_abbrev  0x0000000000000000      0x45a ./src/AHT.o
- .debug_abbrev  0x000000000000045a      0x2b5 ./src/Main.o
- .debug_abbrev  0x000000000000070f      0x38d ./src/app_i2c.o
- .debug_abbrev  0x0000000000000a9c      0x268 ./StdPeriphDriver/CH58x_gpio.o
- .debug_abbrev  0x0000000000000d04      0x3c2 ./StdPeriphDriver/CH58x_i2c.o
- .debug_abbrev  0x00000000000010c6      0x454 ./StdPeriphDriver/CH58x_sys.o
- .debug_abbrev  0x000000000000151a      0x2aa ./StdPeriphDriver/CH58x_uart1.o
- .debug_abbrev  0x00000000000017c4       0x12 ./Startup/startup_CH583.o
+ .debug_abbrev  0x000000000000045a      0x2c8 ./src/Main.o
+ .debug_abbrev  0x0000000000000722      0x38d ./src/app_i2c.o
+ .debug_abbrev  0x0000000000000aaf      0x268 ./StdPeriphDriver/CH58x_gpio.o
+ .debug_abbrev  0x0000000000000d17      0x3c2 ./StdPeriphDriver/CH58x_i2c.o
+ .debug_abbrev  0x00000000000010d9      0x454 ./StdPeriphDriver/CH58x_sys.o
+ .debug_abbrev  0x000000000000152d      0x2aa ./StdPeriphDriver/CH58x_uart1.o
+ .debug_abbrev  0x00000000000017d7       0x12 ./Startup/startup_CH583.o
 
-.debug_loc      0x0000000000000000     0x17d1
+.debug_loc      0x0000000000000000     0x17d6
  .debug_loc     0x0000000000000000      0x1d5 ./src/AHT.o
- .debug_loc     0x00000000000001d5       0x1e ./src/Main.o
- .debug_loc     0x00000000000001f3      0x406 ./src/app_i2c.o
- .debug_loc     0x00000000000005f9      0x361 ./StdPeriphDriver/CH58x_gpio.o
- .debug_loc     0x000000000000095a      0x5b8 ./StdPeriphDriver/CH58x_i2c.o
- .debug_loc     0x0000000000000f12      0x6d2 ./StdPeriphDriver/CH58x_sys.o
- .debug_loc     0x00000000000015e4      0x1ed ./StdPeriphDriver/CH58x_uart1.o
+ .debug_loc     0x00000000000001d5       0x23 ./src/Main.o
+ .debug_loc     0x00000000000001f8      0x406 ./src/app_i2c.o
+ .debug_loc     0x00000000000005fe      0x361 ./StdPeriphDriver/CH58x_gpio.o
+ .debug_loc     0x000000000000095f      0x5b8 ./StdPeriphDriver/CH58x_i2c.o
+ .debug_loc     0x0000000000000f17      0x6d2 ./StdPeriphDriver/CH58x_sys.o
+ .debug_loc     0x00000000000015e9      0x1ed ./StdPeriphDriver/CH58x_uart1.o
 
-.debug_aranges  0x0000000000000000      0x360
+.debug_aranges  0x0000000000000000      0x358
  .debug_aranges
                 0x0000000000000000       0x98 ./src/AHT.o
  .debug_aranges
-                0x0000000000000098       0x40 ./src/Main.o
+                0x0000000000000098       0x38 ./src/Main.o
  .debug_aranges
-                0x00000000000000d8       0x48 ./src/app_i2c.o
+                0x00000000000000d0       0x48 ./src/app_i2c.o
  .debug_aranges
-                0x0000000000000120       0x48 ./StdPeriphDriver/CH58x_gpio.o
+                0x0000000000000118       0x48 ./StdPeriphDriver/CH58x_gpio.o
  .debug_aranges
-                0x0000000000000168       0xe8 ./StdPeriphDriver/CH58x_i2c.o
+                0x0000000000000160       0xe8 ./StdPeriphDriver/CH58x_i2c.o
  .debug_aranges
-                0x0000000000000250       0x90 ./StdPeriphDriver/CH58x_sys.o
+                0x0000000000000248       0x90 ./StdPeriphDriver/CH58x_sys.o
  .debug_aranges
-                0x00000000000002e0       0x50 ./StdPeriphDriver/CH58x_uart1.o
+                0x00000000000002d8       0x50 ./StdPeriphDriver/CH58x_uart1.o
  .debug_aranges
-                0x0000000000000330       0x30 ./Startup/startup_CH583.o
+                0x0000000000000328       0x30 ./Startup/startup_CH583.o
 
-.debug_ranges   0x0000000000000000      0x3c8
+.debug_ranges   0x0000000000000000      0x3c0
  .debug_ranges  0x0000000000000000       0xd8 ./src/AHT.o
- .debug_ranges  0x00000000000000d8       0x30 ./src/Main.o
- .debug_ranges  0x0000000000000108       0x50 ./src/app_i2c.o
- .debug_ranges  0x0000000000000158       0x38 ./StdPeriphDriver/CH58x_gpio.o
- .debug_ranges  0x0000000000000190      0x120 ./StdPeriphDriver/CH58x_i2c.o
- .debug_ranges  0x00000000000002b0       0xb0 ./StdPeriphDriver/CH58x_sys.o
- .debug_ranges  0x0000000000000360       0x40 ./StdPeriphDriver/CH58x_uart1.o
- .debug_ranges  0x00000000000003a0       0x28 ./Startup/startup_CH583.o
+ .debug_ranges  0x00000000000000d8       0x28 ./src/Main.o
+ .debug_ranges  0x0000000000000100       0x50 ./src/app_i2c.o
+ .debug_ranges  0x0000000000000150       0x38 ./StdPeriphDriver/CH58x_gpio.o
+ .debug_ranges  0x0000000000000188      0x120 ./StdPeriphDriver/CH58x_i2c.o
+ .debug_ranges  0x00000000000002a8       0xb0 ./StdPeriphDriver/CH58x_sys.o
+ .debug_ranges  0x0000000000000358       0x40 ./StdPeriphDriver/CH58x_uart1.o
+ .debug_ranges  0x0000000000000398       0x28 ./Startup/startup_CH583.o
 
-.debug_line     0x0000000000000000     0x5bef
+.debug_line     0x0000000000000000     0x5aab
  .debug_line    0x0000000000000000      0xa72 ./src/AHT.o
- .debug_line    0x0000000000000a72      0x6db ./src/Main.o
- .debug_line    0x000000000000114d     0x1210 ./src/app_i2c.o
- .debug_line    0x000000000000235d      0x7a6 ./StdPeriphDriver/CH58x_gpio.o
- .debug_line    0x0000000000002b03      0xf85 ./StdPeriphDriver/CH58x_i2c.o
- .debug_line    0x0000000000003a88     0x1a42 ./StdPeriphDriver/CH58x_sys.o
- .debug_line    0x00000000000054ca      0x5da ./StdPeriphDriver/CH58x_uart1.o
- .debug_line    0x0000000000005aa4      0x14b ./Startup/startup_CH583.o
+ .debug_line    0x0000000000000a72      0x597 ./src/Main.o
+ .debug_line    0x0000000000001009     0x1210 ./src/app_i2c.o
+ .debug_line    0x0000000000002219      0x7a6 ./StdPeriphDriver/CH58x_gpio.o
+ .debug_line    0x00000000000029bf      0xf85 ./StdPeriphDriver/CH58x_i2c.o
+ .debug_line    0x0000000000003944     0x1a42 ./StdPeriphDriver/CH58x_sys.o
+ .debug_line    0x0000000000005386      0x5da ./StdPeriphDriver/CH58x_uart1.o
+ .debug_line    0x0000000000005960      0x14b ./Startup/startup_CH583.o
 
-.debug_str      0x0000000000000000     0x1809
+.debug_str      0x0000000000000000     0x180c
  .debug_str     0x0000000000000000      0x6d3 ./src/AHT.o
                                         0x761 (size before relaxing)
- .debug_str     0x00000000000006d3      0x525 ./src/Main.o
-                                        0xb11 (size before relaxing)
- .debug_str     0x0000000000000bf8      0x59d ./src/app_i2c.o
+ .debug_str     0x00000000000006d3      0x50f ./src/Main.o
+                                        0xb04 (size before relaxing)
+ .debug_str     0x0000000000000be2      0x59d ./src/app_i2c.o
                                         0xec7 (size before relaxing)
- .debug_str     0x0000000000001195       0xe9 ./StdPeriphDriver/CH58x_gpio.o
+ .debug_str     0x000000000000117f       0xe9 ./StdPeriphDriver/CH58x_gpio.o
                                         0x9db (size before relaxing)
- .debug_str     0x000000000000127e      0x2e5 ./StdPeriphDriver/CH58x_i2c.o
+ .debug_str     0x0000000000001268      0x2ed ./StdPeriphDriver/CH58x_i2c.o
                                         0xcdc (size before relaxing)
- .debug_str     0x0000000000001563      0x1c4 ./StdPeriphDriver/CH58x_sys.o
+ .debug_str     0x0000000000001555      0x1c4 ./StdPeriphDriver/CH58x_sys.o
                                         0xc9f (size before relaxing)
- .debug_str     0x0000000000001727       0xbb ./StdPeriphDriver/CH58x_uart1.o
+ .debug_str     0x0000000000001719       0xcc ./StdPeriphDriver/CH58x_uart1.o
                                         0x980 (size before relaxing)
- .debug_str     0x00000000000017e2       0x27 ./Startup/startup_CH583.o
+ .debug_str     0x00000000000017e5       0x27 ./Startup/startup_CH583.o
                                          0x62 (size before relaxing)
 
 .comment        0x0000000000000000       0x66
@@ -1365,19 +1414,34 @@ OUTPUT(binmy_code_new.elf elf32-littleriscv)
  .comment       0x0000000000000033       0x33 ../StdPeriphDriver/libISP583.a(ISP583.o)
                                          0x34 (size before relaxing)
 
-.debug_frame    0x0000000000000000      0x874
+.debug_frame    0x0000000000000000      0xdd4
  .debug_frame   0x0000000000000000      0x1a4 ./src/AHT.o
- .debug_frame   0x00000000000001a4       0x9c ./src/Main.o
- .debug_frame   0x0000000000000240      0x114 ./src/app_i2c.o
- .debug_frame   0x0000000000000354       0x70 ./StdPeriphDriver/CH58x_gpio.o
- .debug_frame   0x00000000000003c4      0x1fc ./StdPeriphDriver/CH58x_i2c.o
- .debug_frame   0x00000000000005c0      0x124 ./StdPeriphDriver/CH58x_sys.o
- .debug_frame   0x00000000000006e4       0x9c ./StdPeriphDriver/CH58x_uart1.o
- .debug_frame   0x0000000000000780       0x50 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(mulsf3.o)
- .debug_frame   0x00000000000007d0       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(fixunssfsi.o)
- .debug_frame   0x00000000000007f0       0x44 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(floatunsisf.o)
- .debug_frame   0x0000000000000834       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(_clzsi2.o)
- .debug_frame   0x0000000000000854       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memcpy.o)
+ .debug_frame   0x00000000000001a4       0x84 ./src/Main.o
+ .debug_frame   0x0000000000000228      0x114 ./src/app_i2c.o
+ .debug_frame   0x000000000000033c       0x70 ./StdPeriphDriver/CH58x_gpio.o
+ .debug_frame   0x00000000000003ac      0x1fc ./StdPeriphDriver/CH58x_i2c.o
+ .debug_frame   0x00000000000005a8      0x124 ./StdPeriphDriver/CH58x_sys.o
+ .debug_frame   0x00000000000006cc       0x9c ./StdPeriphDriver/CH58x_uart1.o
+ .debug_frame   0x0000000000000768       0x50 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(mulsf3.o)
+ .debug_frame   0x00000000000007b8       0x3c /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(subsf3.o)
+ .debug_frame   0x00000000000007f4       0x44 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(floatunsisf.o)
+ .debug_frame   0x0000000000000838       0x38 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(extendsfdf2.o)
+ .debug_frame   0x0000000000000870       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/rv32imac/ilp32/libgcc.a(_clzsi2.o)
+ .debug_frame   0x0000000000000890       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memcpy.o)
+ .debug_frame   0x00000000000008b0       0x60 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-snprintf.o)
+ .debug_frame   0x0000000000000910       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-strlen.o)
+ .debug_frame   0x0000000000000930      0x148 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-findfp.o)
+ .debug_frame   0x0000000000000a78       0x40 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-freer.o)
+ .debug_frame   0x0000000000000ab8       0x40 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x0000000000000af8       0xe0 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-svfprintf.o)
+ .debug_frame   0x0000000000000bd8       0x8c /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-vfprintf_i.o)
+ .debug_frame   0x0000000000000c64       0x30 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-sbrkr.o)
+ .debug_frame   0x0000000000000c94       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memchr.o)
+ .debug_frame   0x0000000000000cb4       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-memmove.o)
+ .debug_frame   0x0000000000000cd4       0x30 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-mlock.o)
+ .debug_frame   0x0000000000000d04       0x40 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-reallocr.o)
+ .debug_frame   0x0000000000000d44       0x70 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-reent.o)
+ .debug_frame   0x0000000000000db4       0x20 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libg_nano.a(lib_a-nano-msizer.o)
 
 .stabstr        0x0000000000000000      0x117
  .stabstr       0x0000000000000000      0x117 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libnosys.a(close.o)

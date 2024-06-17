@@ -21,31 +21,6 @@ uint8_t TxBuff[] = "Hello\r\n";
 uint8_t RxBuff[100];
 uint8_t trigB;
 
-void print_console()
-{
-    uint8_t len;
-#if 1
-    UART1_SendString(TxBuff, sizeof(TxBuff));
-#endif
-
-#if 1
-    while(1)
-    {
-        len = UART1_RecvString(RxBuff);
-        if(len)
-        {
-            UART1_SendString(RxBuff, len);
-        }
-    }
-#endif
-
-#if 0
-    UART1_ByteTrigCfg(UART_7BYTE_TRIG);
-    trigB = 7;
-    UART1_INTCfg(ENABLE, RB_IER_RECV_RDY | RB_IER_LINE_STAT);
-    PFIC_EnableIRQ(UART1_IRQn);
-#endif
-}
 void button_press()
 {
     GPIOA_ModeCfg(GPIO_Pin_6, GPIO_ModeIN_PU);      // RXD
@@ -66,6 +41,15 @@ void switch_on()
 		GPIOA_SetBits(GPIO_Pin_9);
 	}
 }
+void sendFloatOverUART(float value) {
+    char buffer[20]; // Adjust the buffer size as needed
+
+    // Convert float to string with two decimal places
+    snprintf(buffer, sizeof(buffer), "%.2f", value);
+
+    // Send the string over UART
+    UART1_SendString(buffer, strlen(buffer));
+}
 int main()
 {
     uint8_t len;
@@ -77,27 +61,32 @@ int main()
     //print_console();
     //button_press();
 
-    GPIOA_SetBits(GPIO_Pin_0);
-    GPIOA_ModeCfg(GPIO_Pin_0, GPIO_ModeOut_PP_20mA);
+    //GPIOA_SetBits(GPIO_Pin_0);
+    //GPIOA_ModeCfg(GPIO_Pin_0, GPIO_ModeOut_PP_5mA);
 
-    UART1_SendString(TxBuff, sizeof(TxBuff));
-
-    i2c_app_init(AHTXX_ADDRESS_X38);
+    UART1_SendString("S-1\n", sizeof("S-1"));
+    mDelaymS(100);
+    //UART1_Reset();
+    //i2c_app_init(AHTXX_ADDRESS_X38);
     AHT_begin();
-
-    UART1_SendString(TxBuff, sizeof(TxBuff));
+    mDelaymS(100);
+    UART1_SendString("S-2\n", sizeof("S-2"));
+    //UART1_Reset();
 
     mDelaymS(500);
     //mDelaymS(5000);
     while(1)
     {
+    	//mDelaymS(5000);
         //GPIOA_SetBits(GPIO_Pin_0);
-    	UART1_SendString("Start", sizeof("Start"));
-    	UART1_SendByte(readHumidity(1));
-    	mDelaymS(100);
-    	UART1_SendByte(readHumidity(1));
-    	mDelaymS(100);
-
+    	//UART1_SendString("Start\n", sizeof("Start"));
+    	//UART1_Reset();
+    	//UART1_SendByte(readHumidity(1));
+    	//mDelaymS(100);
+    	UART1_SendString("Temperature: ", strlen("Temperature: "));
+    	sendFloatOverUART(readTemperature(1));
+    	UART1_SendString("\n", strlen("\n"));
+        mDelaymS(100);
         //GPIOA_ResetBits(GPIO_Pin_0);
     }
 }
@@ -107,34 +96,34 @@ int main()
  * @brief
  * @return  none
  */
-__INTERRUPT
-__HIGH_CODE
-void UART1_IRQHandler(void)
-{
-    volatile uint8_t i;
-    switch(UART1_GetITFlag())
-    {
-        case UART_II_LINE_STAT:
-        {
-            UART1_GetLinSTA();
-            break;
-        }
-        case UART_II_RECV_RDY:
-            for(i = 0; i != trigB; i++)
-            {
-                RxBuff[i] = UART1_RecvByte();
-                UART1_SendByte(RxBuff[i]);
-            }
-            break;
-        case UART_II_RECV_TOUT:
-            i = UART1_RecvString(RxBuff);
-            UART1_SendString(RxBuff, i);
-            break;
-        case UART_II_THR_EMPTY:
-            break;
-        case UART_II_MODEM_CHG:
-            break;
-        default:
-            break;
-    }
-}
+//__INTERRUPT
+//__HIGH_CODE
+//void UART1_IRQHandler(void)
+//{
+//    volatile uint8_t i;
+//    switch(UART1_GetITFlag())
+//    {
+//        case UART_II_LINE_STAT:
+//        {
+//            UART1_GetLinSTA();
+//            break;
+//        }
+//        case UART_II_RECV_RDY:
+//            for(i = 0; i != trigB; i++)
+//            {
+//                RxBuff[i] = UART1_RecvByte();
+//                UART1_SendByte(RxBuff[i]);
+//            }
+//            break;
+//        case UART_II_RECV_TOUT:
+//            i = UART1_RecvString(RxBuff);
+//            UART1_SendString(RxBuff, i);
+//            break;
+//        case UART_II_THR_EMPTY:
+//            break;
+//        case UART_II_MODEM_CHG:
+//            break;
+//        default:
+//            break;
+//    }
+//}

@@ -262,12 +262,12 @@ WDOG_BAT_IRQHandler:
 20000092 <UART1_IRQHandler>:
 UART1_IRQHandler():
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:90
-        //GPIOA_ResetBits(GPIO_Pin_0);
-    }
-}
-
-/*********************************************************************
- * @fn      UART1_IRQHandler
+ * @brief
+ * @return  none
+ */
+//__INTERRUPT
+//__HIGH_CODE
+//void UART1_IRQHandler(void)
 20000092:	40003737          	lui	a4,0x40003
 20000096:	40474783          	lbu	a5,1028(a4) # 40003404 <_eusrstack+0x1fffb404>
 2000009a:	4699                	li	a3,6
@@ -275,79 +275,79 @@ UART1_IRQHandler():
 2000009e:	02d78a63          	beq	a5,a3,200000d2 <UART1_IRQHandler+0x40>
 200000a2:	4731                	li	a4,12
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:88
-
+//__INTERRUPT
 200000a4:	1141                	addi	sp,sp,-16
 200000a6:	06e78063          	beq	a5,a4,20000106 <UART1_IRQHandler+0x74>
 200000aa:	4711                	li	a4,4
 200000ac:	02e79063          	bne	a5,a4,200000cc <UART1_IRQHandler+0x3a>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:98
- */
-__INTERRUPT
-__HIGH_CODE
-void UART1_IRQHandler(void)
-{
-    volatile uint8_t i;
+//    switch(UART1_GetITFlag())
+//    {
+//        case UART_II_LINE_STAT:
+//        {
+//            UART1_GetLinSTA();
+//            break;
 200000b0:	000107a3          	sb	zero,15(sp)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:100
-    switch(UART1_GetITFlag())
-    {
+//        }
+//        case UART_II_RECV_RDY:
 200000b4:	40003737          	lui	a4,0x40003
 200000b8:	81418693          	addi	a3,gp,-2028 # 20000f14 <RxBuff>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:98 (discriminator 1)
-    volatile uint8_t i;
+//            break;
 200000bc:	00f14783          	lbu	a5,15(sp)
 200000c0:	00001617          	auipc	a2,0x1
 200000c4:	e4064603          	lbu	a2,-448(a2) # 20000f00 <_edata>
 200000c8:	00f61963          	bne	a2,a5,200000da <UART1_IRQHandler+0x48>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:115
-                UART1_SendByte(RxBuff[i]);
-            }
-            break;
-        case UART_II_RECV_TOUT:
-            i = UART1_RecvString(RxBuff);
-            UART1_SendString(RxBuff, i);
+//            break;
+//        case UART_II_THR_EMPTY:
+//            break;
+//        case UART_II_MODEM_CHG:
+//            break;
+//        default:
 200000cc:	0141                	addi	sp,sp,16
 200000ce:	30200073          	mret
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:94
-__INTERRUPT
+//    {
 200000d2:	40574783          	lbu	a5,1029(a4) # 40003405 <_eusrstack+0x1fffb405>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:95
-__HIGH_CODE
+//        case UART_II_LINE_STAT:
 200000d6:	30200073          	mret
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:100 (discriminator 3)
-    {
+//        case UART_II_RECV_RDY:
 200000da:	00f14783          	lbu	a5,15(sp)
 200000de:	40874603          	lbu	a2,1032(a4)
 200000e2:	97b6                	add	a5,a5,a3
 200000e4:	00c78023          	sb	a2,0(a5)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:101 (discriminator 3)
-        case UART_II_LINE_STAT:
+//            for(i = 0; i != trigB; i++)
 200000e8:	00f14783          	lbu	a5,15(sp)
 200000ec:	97b6                	add	a5,a5,a3
 200000ee:	0007c783          	lbu	a5,0(a5)
 200000f2:	40f70423          	sb	a5,1032(a4)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:98 (discriminator 3)
-    volatile uint8_t i;
+//            break;
 200000f6:	00f14783          	lbu	a5,15(sp)
 200000fa:	0785                	addi	a5,a5,1
 200000fc:	0ff7f793          	andi	a5,a5,255
 20000100:	00f107a3          	sb	a5,15(sp)
 20000104:	bf65                	j	200000bc <UART1_IRQHandler+0x2a>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:105
-        }
+//            }
 20000106:	81418513          	addi	a0,gp,-2028 # 20000f14 <RxBuff>
 2000010a:	e0001097          	auipc	ra,0xe0001
 2000010e:	12c080e7          	jalr	300(ra) # 1236 <UART1_RecvString>
 20000112:	0ff57513          	andi	a0,a0,255
 20000116:	00a107a3          	sb	a0,15(sp)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:106
-        case UART_II_RECV_RDY:
+//            break;
 2000011a:	00f14583          	lbu	a1,15(sp)
 2000011e:	81418513          	addi	a0,gp,-2028 # 20000f14 <RxBuff>
 20000122:	e0001097          	auipc	ra,0xe0001
 20000126:	0ec080e7          	jalr	236(ra) # 120e <UART1_SendString>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:115
-            UART1_SendString(RxBuff, i);
+//        default:
 2000012a:	b74d                	j	200000cc <UART1_IRQHandler+0x3a>
 
 2000012c <I2C_IRQHandler>:
@@ -2488,33 +2488,33 @@ handle_reset:
 00000fa2 <print_console>:
 print_console():
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:23
-{
+
      fa2:	1141                	addi	sp,sp,-16
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:26
-    UART1_SendString(TxBuff, sizeof(TxBuff));
+    GPIOA_ModeCfg(GPIO_Pin_6, GPIO_ModeIN_PU);      // RXD
      fa4:	45d1                	li	a1,20
      fa6:	20000517          	auipc	a0,0x20000
      faa:	f4650513          	addi	a0,a0,-186 # 20000eec <_highcode_vma_end>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:23
-{
+
      fae:	c422                	sw	s0,8(sp)
      fb0:	c606                	sw	ra,12(sp)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:32
-        len = UART1_RecvString(RxBuff);
+    }
      fb2:	81418413          	addi	s0,gp,-2028 # 20000f14 <RxBuff>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:26
-    UART1_SendString(TxBuff, sizeof(TxBuff));
+    GPIOA_ModeCfg(GPIO_Pin_6, GPIO_ModeIN_PU);      // RXD
      fb6:	2ca1                	jal	120e <UART1_SendString>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:32
-        len = UART1_RecvString(RxBuff);
+    }
      fb8:	81418513          	addi	a0,gp,-2028 # 20000f14 <RxBuff>
      fbc:	2cad                	jal	1236 <UART1_RecvString>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:33
-        if(len)
+}
      fbe:	0ff57793          	andi	a5,a0,255
      fc2:	dbfd                	beqz	a5,fb8 <print_console+0x16>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:35
-            UART1_SendString(RxBuff, len);
+{
      fc4:	85be                	mv	a1,a5
      fc6:	8522                	mv	a0,s0
      fc8:	2499                	jal	120e <UART1_SendString>
@@ -2523,43 +2523,43 @@ print_console():
 00000fcc <main>:
 main():
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:68
-{
+    //mDelaymS(5000);
      fcc:	1141                	addi	sp,sp,-16
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:70
-    SetSysClock(CLK_SOURCE_PLL_60MHz);
+    {
      fce:	04800513          	li	a0,72
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:68
-{
+    //mDelaymS(5000);
      fd2:	c606                	sw	ra,12(sp)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:70
-    SetSysClock(CLK_SOURCE_PLL_60MHz);
+    {
      fd4:	1ffff097          	auipc	ra,0x1ffff
      fd8:	604080e7          	jalr	1540(ra) # 200005d8 <SetSysClock>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:71
-    GPIOA_SetBits(GPIO_Pin_9);
+    	mDelaymS(1000);
      fdc:	40001737          	lui	a4,0x40001
      fe0:	0a872783          	lw	a5,168(a4) # 400010a8 <_eusrstack+0x1fff90a8>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:72
-    GPIOA_ModeCfg(GPIO_Pin_8, GPIO_ModeIN_PU);      // RXD
+        GPIOA_SetBits(GPIO_Pin_0);
      fe4:	4585                	li	a1,1
      fe6:	10000513          	li	a0,256
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:71
-    GPIOA_SetBits(GPIO_Pin_9);
+    	mDelaymS(1000);
      fea:	2007e793          	ori	a5,a5,512
      fee:	0af72423          	sw	a5,168(a4)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:72
-    GPIOA_ModeCfg(GPIO_Pin_8, GPIO_ModeIN_PU);      // RXD
+        GPIOA_SetBits(GPIO_Pin_0);
      ff2:	2039                	jal	1000 <GPIOA_ModeCfg>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:73
-    GPIOA_ModeCfg(GPIO_Pin_9, GPIO_ModeOut_PP_5mA); // TXD
+//    	UART1_SendString("Start", sizeof("Start"));
      ff4:	458d                	li	a1,3
      ff6:	20000513          	li	a0,512
      ffa:	2019                	jal	1000 <GPIOA_ModeCfg>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:74
-    UART1_DefInit();
+//    	UART1_Reset();
      ffc:	22c5                	jal	11dc <UART1_DefInit>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:75
-    //print_console();
+//    	UART1_SendByte(readHumidity(1));
      ffe:	3755                	jal	fa2 <print_console>
 
 00001000 <GPIOA_ModeCfg>:
