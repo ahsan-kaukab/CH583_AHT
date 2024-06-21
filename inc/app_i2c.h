@@ -92,7 +92,7 @@ void i2c_slave_cb_register(struct i2c_slave_cb *cb);
  * @param send_stop Choose to send stop or not.
  * @return          0 If successful. 
  */
-int i2c_write_to(uint8_t addr_7bit, const uint8_t *data, uint8_t length,
+int i2c_write_to(uint8_t addr_7bit, uint8_t *data, uint8_t length,
         uint8_t wait, uint8_t send_stop);
 
 /**

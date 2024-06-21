@@ -64,13 +64,21 @@ int main()
     //GPIOA_SetBits(GPIO_Pin_0);
     //GPIOA_ModeCfg(GPIO_Pin_0, GPIO_ModeOut_PP_5mA);
 
-    UART1_SendString("S-1\n", sizeof("S-1"));
-    mDelaymS(100);
+    //UART1_SendString("S-1\n", sizeof("S-1"));
+    //mDelaymS(100);
     //UART1_Reset();
     //i2c_app_init(AHTXX_ADDRESS_X38);
-    AHT_begin();
-    mDelaymS(100);
-    UART1_SendString("S-2\n", sizeof("S-2"));
+    AHT21_init();
+//    if(AHT_begin() ==0)
+//    {
+//    	UART1_SendString("AHT init not successfull", strlen("AHT init not successfull"));
+//    }
+//    else
+//    {
+//    	UART1_SendString("AHT init successfull", strlen("AHT init successfull"));
+//    }
+    //mDelaymS(100);
+    //UART1_SendString("S-2\n", sizeof("S-2"));
     //UART1_Reset();
 
     mDelaymS(500);
@@ -83,10 +91,33 @@ int main()
     	//UART1_Reset();
     	//UART1_SendByte(readHumidity(1));
     	//mDelaymS(100);
-    	UART1_SendString("Temperature: ", strlen("Temperature: "));
-    	sendFloatOverUART(readTemperature(1));
-    	UART1_SendString("\n", strlen("\n"));
-        mDelaymS(100);
+    	//UART1_SendString("Temperature: ", strlen("Temperature: "));
+
+    	float temp_temperature  = AHT21_Read_Temperature();
+
+    	if(temp_temperature >= 100)
+    	{
+    		UART1_SendString("Very High temperature", strlen("Very High temperature"));
+    	}
+    	else if(temp_temperature >= 50)
+    	{
+    		UART1_SendString("High temperature", strlen("High temperature"));
+    	}
+       	else if(temp_temperature >= 30)
+		{
+			UART1_SendString("Normal temperature", strlen("Normal temperature"));
+		}
+       	else if (temp_temperature >= 0)
+       	{
+       		UART1_SendString("Low temperature", strlen("Low temperature"));
+       	}
+       	else
+       		UART1_SendString("Not possible", strlen("Not possible"));
+
+    	//sendFloatOverUART(251.2);
+    	//sendFloatOverUART(readTemperature(0));
+    	//UART1_SendString("\n", strlen("\n"));
+        mDelaymS(500);
         //GPIOA_ResetBits(GPIO_Pin_0);
     }
 }

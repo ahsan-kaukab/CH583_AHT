@@ -68,48 +68,8 @@ void i2c_slave_cb_register(struct i2c_slave_cb *cb)
 {
    slave_cb = cb;
 }
-int i2c_write(uint8_t addr_7bit, uint8_t wait, uint8_t send_stop)
-{
-    if (i2c_state != I2C_READY) {
-        return -I2C_STATE;
-    }
 
-    i2c_state = I2C_MTX;
-    i2c_send_stop = send_stop;
-
-    i2c_error = 0;
-
-    i2c_slave_addr_rw = I2C_WRITE;
-    i2c_slave_addr_rw |= addr_7bit << 1;
-
-    I2C_GenerateSTOP(DISABLE);
-
-    if (i2c_in_repstart == true) {
-        i2c_in_repstart = false;
-
-        do {
-            I2C_SendData(i2c_slave_addr_rw);
-        } while(R16_I2C_CTRL1 & RB_I2C_BTF);
-
-        /* Disabled in IRS */
-        I2C_ITConfig(I2C_IT_BUF, ENABLE);
-        I2C_ITConfig(I2C_IT_EVT, ENABLE);
-        I2C_ITConfig(I2C_IT_ERR, ENABLE);
-    } else {
-        I2C_GenerateSTART(ENABLE);
-    }
-
-    while(wait && (i2c_state == I2C_MTX)) {
-        continue;
-    }
-
-    if (i2c_error) {
-        return -i2c_error;
-    }
-
-    return 0;
-}
-int i2c_write_to(uint8_t addr_7bit, const uint8_t *data, uint8_t length,
+int i2c_write_to(uint8_t addr_7bit, uint8_t *data, uint8_t length,
         uint8_t wait, uint8_t send_stop)
 {
     if (length > I2C_BUFFER_LENGTH) {
