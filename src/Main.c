@@ -68,21 +68,10 @@ int main()
     //mDelaymS(100);
     //UART1_Reset();
     //i2c_app_init(AHTXX_ADDRESS_X38);
-    AHT21_init();
-//    if(AHT_begin() ==0)
-//    {
-//    	UART1_SendString("AHT init not successfull", strlen("AHT init not successfull"));
-//    }
-//    else
-//    {
-//    	UART1_SendString("AHT init successfull", strlen("AHT init successfull"));
-//    }
-    //mDelaymS(100);
-    //UART1_SendString("S-2\n", sizeof("S-2"));
-    //UART1_Reset();
+    //AHT21_init();
 
-    mDelaymS(500);
     //mDelaymS(5000);
+    AHT21_init();
     while(1)
     {
     	//mDelaymS(5000);
@@ -92,8 +81,21 @@ int main()
     	//UART1_SendByte(readHumidity(1));
     	//mDelaymS(100);
     	//UART1_SendString("Temperature: ", strlen("Temperature: "));
+//        if(AHT21_init() == 0)
+//        {
+//        	UART1_SendString("AHT init successfull \n", strlen("AHT init successfull \n"));
+//        }
+//        else
+//        {
+//        	UART1_SendString("AHT init is not successfull \n", strlen("AHT init is not successfull \n"));
+//        	mDelaymS(500);
+//        	return 0;
+//        }
+        //mDelaymS(100);
+        //UART1_SendString("S-2\n", sizeof("S-2"));
+        //UART1_Reset();
 
-    	float temp_temperature  = AHT21_Read_Temperature();
+    	uint32_t temp_temperature  = AHT21_Read_Temperature();
 
     	if(temp_temperature >= 100)
     	{
@@ -103,7 +105,7 @@ int main()
     	{
     		UART1_SendString("High temperature", strlen("High temperature"));
     	}
-       	else if(temp_temperature >= 30)
+       	else if(temp_temperature >= 25)
 		{
 			UART1_SendString("Normal temperature", strlen("Normal temperature"));
 		}
@@ -111,8 +113,10 @@ int main()
        	{
        		UART1_SendString("Low temperature", strlen("Low temperature"));
        	}
-       	else
+       	else if (temp_temperature < 0)
        		UART1_SendString("Not possible", strlen("Not possible"));
+       	else
+       		UART1_SendString("WTF", strlen("WTF"));
 
     	//sendFloatOverUART(251.2);
     	//sendFloatOverUART(readTemperature(0));
