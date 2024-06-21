@@ -94,29 +94,14 @@ int main()
         //mDelaymS(100);
         //UART1_SendString("S-2\n", sizeof("S-2"));
         //UART1_Reset();
-
+    	char temp_char[4];
     	uint32_t temp_temperature  = AHT21_Read_Temperature();
+    	sprintf(temp_char, "%u", temp_temperature);
 
-    	if(temp_temperature >= 100)
-    	{
-    		UART1_SendString("Very High temperature", strlen("Very High temperature"));
-    	}
-    	else if(temp_temperature >= 50)
-    	{
-    		UART1_SendString("High temperature", strlen("High temperature"));
-    	}
-       	else if(temp_temperature >= 25)
-		{
-			UART1_SendString("Normal temperature", strlen("Normal temperature"));
-		}
-       	else if (temp_temperature >= 0)
-       	{
-       		UART1_SendString("Low temperature", strlen("Low temperature"));
-       	}
-       	else if (temp_temperature < 0)
-       		UART1_SendString("Not possible", strlen("Not possible"));
-       	else
-       		UART1_SendString("WTF", strlen("WTF"));
+    	UART1_SendString("\r\n", strlen("\r\n"));
+    	UART1_SendString("Temperature Value is :: ", strlen("Temperature Value is :: "));
+    	UART1_SendString(temp_char, strlen(temp_char));
+    	UART1_SendString("\r\n", strlen("\r\n"));
 
     	//sendFloatOverUART(251.2);
     	//sendFloatOverUART(readTemperature(0));
