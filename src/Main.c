@@ -102,7 +102,17 @@ int main()
     	UART1_SendString("Temperature Value is :: ", strlen("Temperature Value is :: "));
     	UART1_SendString(temp_char, strlen(temp_char));
     	UART1_SendString("\r\n", strlen("\r\n"));
+    	mDelaymS(1000);
 
+    	temp_char[4];
+    	uint32_t temp_humid  = AHT21_Read_Humidity();
+    	sprintf(temp_char, "%u", temp_humid);
+
+    	UART1_SendString("\r\n", strlen("\r\n"));
+    	UART1_SendString("Humidity Value is :: ", strlen("Humidity Value is :: "));
+    	UART1_SendString(temp_char, strlen(temp_char));
+    	UART1_SendString("\r\n", strlen("\r\n"));
+    	mDelaymS(1000);
     	//sendFloatOverUART(251.2);
     	//sendFloatOverUART(readTemperature(0));
     	//UART1_SendString("\n", strlen("\n"));
