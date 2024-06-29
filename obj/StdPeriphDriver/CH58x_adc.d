@@ -1,5 +1,5 @@
-StdPeriphDriver/CH58x_usb2hostClass.o: \
- ../StdPeriphDriver/CH58x_usb2hostClass.c \
+StdPeriphDriver/CH58x_adc.o: \
+ /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/StdPeriphDriver/CH58x_adc.c \
  ../StdPeriphDriver/inc/CH58x_common.h ../StdPeriphDriver/inc/CH583SFR.h \
  ../RVMSIS/core_riscv.h ../StdPeriphDriver/inc/CH58x_clk.h \
  ../StdPeriphDriver/inc/CH58x_uart.h ../StdPeriphDriver/inc/CH58x_gpio.h \

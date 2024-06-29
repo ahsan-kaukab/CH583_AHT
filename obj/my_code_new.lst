@@ -262,12 +262,12 @@ WDOG_BAT_IRQHandler:
 20000092 <UART1_IRQHandler>:
 UART1_IRQHandler():
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:90
- * @brief
- * @return  none
- */
-//__INTERRUPT
-//__HIGH_CODE
-//void UART1_IRQHandler(void)
+	//PRINT("\n5.TouchKey sampling...\n");
+	GPIOA_ModeCfg(GPIO_Pin_12, GPIO_ModeIN_Floating);
+	TouchKey_ChSampInit();
+	ADC_ChannelCfg(2);
+
+	for(i = 0; i < 20; i++)
 20000092:	40003737          	lui	a4,0x40003
 20000096:	40474783          	lbu	a5,1028(a4) # 40003404 <_eusrstack+0x1fffb404>
 2000009a:	4699                	li	a3,6
@@ -275,148 +275,148 @@ UART1_IRQHandler():
 2000009e:	02d78a63          	beq	a5,a3,200000d2 <UART1_IRQHandler+0x40>
 200000a2:	4731                	li	a4,12
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:88
-//__INTERRUPT
+	ADC_ChannelCfg(2);
 200000a4:	1141                	addi	sp,sp,-16
 200000a6:	06e78063          	beq	a5,a4,20000106 <UART1_IRQHandler+0x74>
 200000aa:	4711                	li	a4,4
 200000ac:	02e79063          	bne	a5,a4,200000cc <UART1_IRQHandler+0x3a>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:98
-//    switch(UART1_GetITFlag())
-//    {
-//        case UART_II_LINE_STAT:
-//        {
-//            UART1_GetLinSTA();
-//            break;
+	}
+	for(i = 0; i < 20; i++)
+	{
+		//PRINT("%d \n", adcBuff[i]);
+		char temp_char[2];
+		sprintf(temp_char, "%u", adcBuff);
 200000b0:	000107a3          	sb	zero,15(sp)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:100
-//        }
-//        case UART_II_RECV_RDY:
+		UART1_SendString("\r\n", strlen("\r\n"));
+		UART1_SendString("Touch Sampling Value is :: ", strlen("Touch Sampling Value is :: "));
 200000b4:	40003737          	lui	a4,0x40003
 200000b8:	81418693          	addi	a3,gp,-2028 # 20000f14 <RxBuff>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:98 (discriminator 1)
-//            break;
+		sprintf(temp_char, "%u", adcBuff);
 200000bc:	00f14783          	lbu	a5,15(sp)
 200000c0:	00001617          	auipc	a2,0x1
 200000c4:	e4064603          	lbu	a2,-448(a2) # 20000f00 <_edata>
 200000c8:	00f61963          	bne	a2,a5,200000da <UART1_IRQHandler+0x48>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:115
-//            break;
-//        case UART_II_THR_EMPTY:
-//            break;
-//        case UART_II_MODEM_CHG:
-//            break;
-//        default:
+	uint32_t temp_temperature  = AHT21_Read_Temperature();
+	sprintf(temp_char, "%u", temp_temperature);
+
+	UART1_SendString("\r\n", strlen("\r\n"));
+	UART1_SendString("Temperature Value is :: ", strlen("Temperature Value is :: "));
+	UART1_SendString(temp_char, strlen(temp_char));
 200000cc:	0141                	addi	sp,sp,16
 200000ce:	30200073          	mret
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:94
-//    {
+	for(i = 0; i < 20; i++)
 200000d2:	40574783          	lbu	a5,1029(a4) # 40003405 <_eusrstack+0x1fffb405>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:95
-//        case UART_II_LINE_STAT:
+	{
 200000d6:	30200073          	mret
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:100 (discriminator 3)
-//        case UART_II_RECV_RDY:
+		UART1_SendString("Touch Sampling Value is :: ", strlen("Touch Sampling Value is :: "));
 200000da:	00f14783          	lbu	a5,15(sp)
 200000de:	40874603          	lbu	a2,1032(a4)
 200000e2:	97b6                	add	a5,a5,a3
 200000e4:	00c78023          	sb	a2,0(a5)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:101 (discriminator 3)
-//            for(i = 0; i != trigB; i++)
+		UART1_SendString(temp_char, strlen(temp_char));
 200000e8:	00f14783          	lbu	a5,15(sp)
 200000ec:	97b6                	add	a5,a5,a3
 200000ee:	0007c783          	lbu	a5,0(a5)
 200000f2:	40f70423          	sb	a5,1032(a4)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:98 (discriminator 3)
-//            break;
+		sprintf(temp_char, "%u", adcBuff);
 200000f6:	00f14783          	lbu	a5,15(sp)
 200000fa:	0785                	addi	a5,a5,1
 200000fc:	0ff7f793          	andi	a5,a5,255
 20000100:	00f107a3          	sb	a5,15(sp)
 20000104:	bf65                	j	200000bc <UART1_IRQHandler+0x2a>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:105
-//            }
+
 20000106:	81418513          	addi	a0,gp,-2028 # 20000f14 <RxBuff>
 2000010a:	e0001097          	auipc	ra,0xe0001
 2000010e:	12c080e7          	jalr	300(ra) # 1236 <UART1_RecvString>
 20000112:	0ff57513          	andi	a0,a0,255
 20000116:	00a107a3          	sb	a0,15(sp)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:106
-//            break;
+void test_aht()
 2000011a:	00f14583          	lbu	a1,15(sp)
 2000011e:	81418513          	addi	a0,gp,-2028 # 20000f14 <RxBuff>
 20000122:	e0001097          	auipc	ra,0xe0001
 20000126:	0ec080e7          	jalr	236(ra) # 120e <UART1_SendString>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:115
-//        default:
+	UART1_SendString(temp_char, strlen(temp_char));
 2000012a:	b74d                	j	200000cc <UART1_IRQHandler+0x3a>
 
 2000012c <I2C_IRQHandler>:
 I2C_IRQHandler():
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:294
-#endif
+                        I2C_DBG("  restart\n");
+                    }
+                }
+            }
 
-__INTERRUPT
-__HIGH_CODE
-void I2C_IRQHandler(void)
-{
+            /* Address or data sent, nack received */
 2000012c:	1141                	addi	sp,sp,-16
 2000012e:	c622                	sw	s0,12(sp)
 20000130:	c426                	sw	s1,8(sp)
 20000132:	c24a                	sw	s2,4(sp)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:295
-    uint32_t event = I2C_GetLastEvent();
+            if (event & RB_I2C_AF) {
 20000134:	e0001097          	auipc	ra,0xe0001
 20000138:	00e080e7          	jalr	14(ra) # 1142 <I2C_GetLastEvent>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:299
-    print_i2c_irq_sta(event);
+                I2C_ClearFlag(I2C_FLAG_AF);
 
-    /* I2C Master */
-    if (event & (RB_I2C_MSL << 16)) {
+                i2c_error = I2C_MT_NACK;
+                i2c_state = I2C_READY;
 2000013c:	00f51793          	slli	a5,a0,0xf
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:295
-    uint32_t event = I2C_GetLastEvent();
+            if (event & RB_I2C_AF) {
 20000140:	842a                	mv	s0,a0
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:299
-    if (event & (RB_I2C_MSL << 16)) {
+                i2c_state = I2C_READY;
 20000142:	40057493          	andi	s1,a0,1024
 20000146:	2a07da63          	bgez	a5,200003fa <I2C_IRQHandler+0x2ce>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:300
-        if (event & RB_I2C_SB) {
+                I2C_GenerateSTOP(ENABLE);
 2000014a:	00157793          	andi	a5,a0,1
 2000014e:	cb89                	beqz	a5,20000160 <I2C_IRQHandler+0x34>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:302
-            /* Start condition sent, send address */
-            I2C_SendData(i2c_slave_addr_rw);
+                I2C_DBG("  NACK received, sent stop\n");
+            }
 20000150:	00001517          	auipc	a0,0x1
 20000154:	db654503          	lbu	a0,-586(a0) # 20000f06 <i2c_slave_addr_rw>
 20000158:	e0001097          	auipc	ra,0xe0001
 2000015c:	fd2080e7          	jalr	-46(ra) # 112a <I2C_SendData>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:307
-            I2C_DBG("Master selected, send address\n");
-        }
+        } else {
+        /* I2C Master reveiver */
+            I2C_DBG("Master receiver:\n");
 
-        /* I2C Master transmitter */
-        if (event & (RB_I2C_TRA << 16)) {
+            /* address sent, ack received */
 20000160:	00d41793          	slli	a5,s0,0xd
 20000164:	1207d063          	bgez	a5,20000284 <I2C_IRQHandler+0x158>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:310
-            I2C_DBG("Master transmitter:\n");
-            /* Slave receiver acked address or sent bit */
-            if (event & (RB_I2C_ADDR | RB_I2C_BTF | RB_I2C_TxE | (RB_I2C_TRA << 16))) {
+            if(event & RB_I2C_ADDR) { 
+                /* ack if more bytes are expected, otherwise nack */
+                if (i2c_master_buffer_length) {
 20000168:	000407b7          	lui	a5,0x40
 2000016c:	08678793          	addi	a5,a5,134 # 40086 <_data_lma+0x3ee12>
 20000170:	8fe1                	and	a5,a5,s0
 20000172:	c3b1                	beqz	a5,200001b6 <I2C_IRQHandler+0x8a>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:312
-                /* if there is data to send, send it, otherwise stop */
-                if (i2c_master_buffer_index < i2c_master_buffer_length) {
+                    I2C_AcknowledgeConfig(ENABLE);
+                    I2C_DBG("  address sent\n");
 20000174:	00001797          	auipc	a5,0x1
 20000178:	d8f7c783          	lbu	a5,-625(a5) # 20000f03 <i2c_master_buffer_index>
 2000017c:	00001717          	auipc	a4,0x1
 20000180:	d8874703          	lbu	a4,-632(a4) # 20000f04 <i2c_master_buffer_length>
 20000184:	0ae7f163          	bgeu	a5,a4,20000226 <I2C_IRQHandler+0xfa>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:313
-                    I2C_SendData(i2c_master_buffer[i2c_master_buffer_index++]);
+                    I2C_DBG("  ACK next\n");
 20000188:	00001797          	auipc	a5,0x1
 2000018c:	d7b78793          	addi	a5,a5,-645 # 20000f03 <i2c_master_buffer_index>
 20000190:	0007c783          	lbu	a5,0(a5)
@@ -430,158 +430,151 @@ void I2C_IRQHandler(void)
 200001ae:	e0001097          	auipc	ra,0xe0001
 200001b2:	f7c080e7          	jalr	-132(ra) # 112a <I2C_SendData>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:335
-                    }
-                }
-            }
+                    I2C_DBG("  ACK next\n");
+                } else {
+                    //XXX: Should not delay too match before NACK 
+                    I2C_AcknowledgeConfig(DISABLE);
+                    I2C_DBG("  NACK next\n");
 
-            /* Address or data sent, nack received */
-            if (event & RB_I2C_AF) {
 200001b6:	c48d                	beqz	s1,200001e0 <I2C_IRQHandler+0xb4>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:336
-                I2C_ClearFlag(I2C_FLAG_AF);
+                    if (is_nack_sent) {
 200001b8:	10000537          	lui	a0,0x10000
 200001bc:	40050513          	addi	a0,a0,1024 # 10000400 <_data_lma+0xffff18c>
 200001c0:	e0001097          	auipc	ra,0xe0001
 200001c4:	f98080e7          	jalr	-104(ra) # 1158 <I2C_ClearFlag>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:338
-
-                i2c_error = I2C_MT_NACK;
+                        is_nack_sent = false;
+                        if (i2c_send_stop) {
 200001c8:	478d                	li	a5,3
 200001ca:	00001717          	auipc	a4,0x1
 200001ce:	d2f70ba3          	sb	a5,-713(a4) # 20000f01 <i2c_error>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:411
-                /* put final byte into buffer */
-                i2c_master_buffer[i2c_master_buffer_index++] = I2C_ReceiveData();
+            }
+        }
 
-                if (i2c_send_stop) {
-                    i2c_state = I2C_READY;
-                    I2C_GenerateSTOP(ENABLE);
+        if (event & (RB_I2C_TRA << 16)) { //TODO: STOP?
+            /* Slave transmintter */
+            I2C_AcknowledgeConfig(ENABLE);
 200001d2:	4505                	li	a0,1
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:410
-                    i2c_state = I2C_READY;
+            /* Slave transmintter */
 200001d4:	80018523          	sb	zero,-2038(gp) # 20000f0a <i2c_state>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:411
-                    I2C_GenerateSTOP(ENABLE);
+            I2C_AcknowledgeConfig(ENABLE);
 200001d8:	e0001097          	auipc	ra,0xe0001
 200001dc:	ef0080e7          	jalr	-272(ra) # 10c8 <I2C_GenerateSTOP>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:519
-                I2C_AcknowledgeConfig(ENABLE);
-            }
-        }
-    }
 
-    if (event & RB_I2C_BERR) {
+    if (event & RB_I2C_SMBALERT) {
+        I2C_ClearFlag(RB_I2C_SMBALERT);
+        
+        i2c_error = I2C_SMBALERT;
+        I2C_DBG("RB_I2C_SMBALERT\n");
 200001e0:	10047793          	andi	a5,s0,256
 200001e4:	c38d                	beqz	a5,20000206 <I2C_IRQHandler+0xda>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:520
-        I2C_ClearFlag(RB_I2C_BERR);
+    }
 200001e6:	10000513          	li	a0,256
 200001ea:	e0001097          	auipc	ra,0xe0001
 200001ee:	f6e080e7          	jalr	-146(ra) # 1158 <I2C_ClearFlag>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:521
-        I2C_GenerateSTOP(ENABLE);
+
 200001f2:	4505                	li	a0,1
 200001f4:	e0001097          	auipc	ra,0xe0001
 200001f8:	ed4080e7          	jalr	-300(ra) # 10c8 <I2C_GenerateSTOP>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:523
-
-        i2c_error = I2C_BUS_ERROR;
+    I2C_DBG("\n");
+}
 200001fc:	4795                	li	a5,5
 200001fe:	00001717          	auipc	a4,0x1
 20000202:	d0f701a3          	sb	a5,-765(a4) # 20000f01 <i2c_error>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:527
-        I2C_DBG("RB_I2C_BERR\n");
-    }
-
-    if (event & RB_I2C_ARLO) {
 20000206:	20047793          	andi	a5,s0,512
 2000020a:	24078d63          	beqz	a5,20000464 <I2C_IRQHandler+0x338>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:528
-        I2C_ClearFlag(RB_I2C_ARLO);
 2000020e:	20000513          	li	a0,512
 20000212:	e0001097          	auipc	ra,0xe0001
 20000216:	f46080e7          	jalr	-186(ra) # 1158 <I2C_ClearFlag>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:530
-        
-        i2c_error = I2C_ARB_LOST;
 2000021a:	4791                	li	a5,4
 2000021c:	00001717          	auipc	a4,0x1
 20000220:	cef702a3          	sb	a5,-795(a4) # 20000f01 <i2c_error>
 20000224:	a481                	j	20000464 <I2C_IRQHandler+0x338>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:317
-                    if (i2c_send_stop) {
+                    is_nack_sent = true;
 20000226:	00001797          	auipc	a5,0x1
 2000022a:	cdf7c783          	lbu	a5,-801(a5) # 20000f05 <i2c_send_stop>
 2000022e:	cb89                	beqz	a5,20000240 <I2C_IRQHandler+0x114>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:319
-                        I2C_GenerateSTOP(ENABLE);
+                    I2C_DBG("  NACK next\n");
 20000230:	4505                	li	a0,1
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:318
-                        i2c_state = I2C_READY;
+                    I2C_DBG("  address sent\n");
 20000232:	80018523          	sb	zero,-2038(gp) # 20000f0a <i2c_state>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:319
-                        I2C_GenerateSTOP(ENABLE);
+                    I2C_DBG("  NACK next\n");
 20000236:	e0001097          	auipc	ra,0xe0001
 2000023a:	e92080e7          	jalr	-366(ra) # 10c8 <I2C_GenerateSTOP>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:320
-                        I2C_DBG("  send STOP\n");
+                }
 2000023e:	bfa5                	j	200001b6 <I2C_IRQHandler+0x8a>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:322
-                        i2c_in_repstart = true;
+
 20000240:	4785                	li	a5,1
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:324
-                        I2C_ITConfig(I2C_IT_BUF, DISABLE);
+            if (event & (RB_I2C_RxNE)) {
 20000242:	4581                	li	a1,0
 20000244:	40000513          	li	a0,1024
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:322
-                        i2c_in_repstart = true;
+
 20000248:	00001717          	auipc	a4,0x1
 2000024c:	caf70d23          	sb	a5,-838(a4) # 20000f02 <i2c_in_repstart>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:324
-                        I2C_ITConfig(I2C_IT_BUF, DISABLE);
+            if (event & (RB_I2C_RxNE)) {
 20000250:	e0001097          	auipc	ra,0xe0001
 20000254:	ebc080e7          	jalr	-324(ra) # 110c <I2C_ITConfig>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:325
-                        I2C_ITConfig(I2C_IT_EVT, DISABLE);
+                /* put byte into buffer */ 
 20000258:	4581                	li	a1,0
 2000025a:	20000513          	li	a0,512
 2000025e:	e0001097          	auipc	ra,0xe0001
 20000262:	eae080e7          	jalr	-338(ra) # 110c <I2C_ITConfig>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:326
-                        I2C_ITConfig(I2C_IT_ERR, DISABLE);
+                i2c_master_buffer[i2c_master_buffer_index++] = I2C_ReceiveData();
 20000266:	4581                	li	a1,0
 20000268:	10000513          	li	a0,256
 2000026c:	e0001097          	auipc	ra,0xe0001
 20000270:	ea0080e7          	jalr	-352(ra) # 110c <I2C_ITConfig>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:327
-                        I2C_GenerateSTART(ENABLE);
+
 20000274:	4505                	li	a0,1
 20000276:	e0001097          	auipc	ra,0xe0001
 2000027a:	e30080e7          	jalr	-464(ra) # 10a6 <I2C_GenerateSTART>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:328
-                        i2c_state = I2C_READY;
+                if (i2c_master_buffer_index < i2c_master_buffer_length) {
 2000027e:	80018523          	sb	zero,-2038(gp) # 20000f0a <i2c_state>
 20000282:	bf15                	j	200001b6 <I2C_IRQHandler+0x8a>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:348
-            if(event & RB_I2C_ADDR) { 
+                            I2C_GenerateSTART(ENABLE);
 20000284:	00247793          	andi	a5,s0,2
 20000288:	cb99                	beqz	a5,2000029e <I2C_IRQHandler+0x172>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:350
-                if (i2c_master_buffer_length) {
+                            I2C_DBG("  restart\n");
 2000028a:	00001797          	auipc	a5,0x1
 2000028e:	c7a7c783          	lbu	a5,-902(a5) # 20000f04 <i2c_master_buffer_length>
 20000292:	c3e5                	beqz	a5,20000372 <I2C_IRQHandler+0x246>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:351
-                    I2C_AcknowledgeConfig(ENABLE);
+
 20000294:	4505                	li	a0,1
 20000296:	e0001097          	auipc	ra,0xe0001
 2000029a:	e54080e7          	jalr	-428(ra) # 10ea <I2C_AcknowledgeConfig>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:364
-            if (event & (RB_I2C_RxNE)) {
+            if (event & RB_I2C_AF) {
 2000029e:	04047793          	andi	a5,s0,64
 200002a2:	c3b9                	beqz	a5,200002e8 <I2C_IRQHandler+0x1bc>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:366
-                i2c_master_buffer[i2c_master_buffer_index++] = I2C_ReceiveData();
+                /* put final byte into buffer */
 200002a4:	00001917          	auipc	s2,0x1
 200002a8:	c5f94903          	lbu	s2,-929(s2) # 20000f03 <i2c_master_buffer_index>
 200002ac:	00190793          	addi	a5,s2,1
@@ -593,28 +586,28 @@ void I2C_IRQHandler(void)
 200002c4:	97ca                	add	a5,a5,s2
 200002c6:	00a78023          	sb	a0,0(a5)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:368
-                if (i2c_master_buffer_index < i2c_master_buffer_length) {
+
 200002ca:	00001717          	auipc	a4,0x1
 200002ce:	c3a74703          	lbu	a4,-966(a4) # 20000f04 <i2c_master_buffer_length>
 200002d2:	00001797          	auipc	a5,0x1
 200002d6:	c317c783          	lbu	a5,-975(a5) # 20000f03 <i2c_master_buffer_index>
 200002da:	0ae7f563          	bgeu	a5,a4,20000384 <I2C_IRQHandler+0x258>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:369
-                    I2C_AcknowledgeConfig(ENABLE);
+                if (i2c_send_stop) {
 200002de:	4505                	li	a0,1
 200002e0:	e0001097          	auipc	ra,0xe0001
 200002e4:	e0a080e7          	jalr	-502(ra) # 10ea <I2C_AcknowledgeConfig>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:404
-            if (event & RB_I2C_AF) {
+                i2c_state = I2C_SRX;
 200002e8:	ee048ce3          	beqz	s1,200001e0 <I2C_IRQHandler+0xb4>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:405
-                I2C_ClearFlag(I2C_FLAG_AF);
+                i2c_slave_rxbuffer_index = 0;
 200002ec:	10000537          	lui	a0,0x10000
 200002f0:	40050513          	addi	a0,a0,1024 # 10000400 <_data_lma+0xffff18c>
 200002f4:	e0001097          	auipc	ra,0xe0001
 200002f8:	e64080e7          	jalr	-412(ra) # 1158 <I2C_ClearFlag>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:407
-                i2c_master_buffer[i2c_master_buffer_index++] = I2C_ReceiveData();
+        }
 200002fc:	00001497          	auipc	s1,0x1
 20000300:	c074c483          	lbu	s1,-1017(s1) # 20000f03 <i2c_master_buffer_index>
 20000304:	00148793          	addi	a5,s1,1
@@ -626,142 +619,142 @@ void I2C_IRQHandler(void)
 2000031c:	97a6                	add	a5,a5,s1
 2000031e:	00a78023          	sb	a0,0(a5)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:409
-                if (i2c_send_stop) {
+        if (event & (RB_I2C_TRA << 16)) { //TODO: STOP?
 20000322:	00001797          	auipc	a5,0x1
 20000326:	be37c783          	lbu	a5,-1053(a5) # 20000f05 <i2c_send_stop>
 2000032a:	ea0794e3          	bnez	a5,200001d2 <I2C_IRQHandler+0xa6>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:414
-                    i2c_in_repstart = true;
+            if (event & RB_I2C_AF) {
 2000032e:	4785                	li	a5,1
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:416
-                    I2C_ITConfig(I2C_IT_BUF, DISABLE);
+                I2C_ClearFlag(I2C_FLAG_AF);
 20000330:	4581                	li	a1,0
 20000332:	40000513          	li	a0,1024
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:414
-                    i2c_in_repstart = true;
+            if (event & RB_I2C_AF) {
 20000336:	00001717          	auipc	a4,0x1
 2000033a:	bcf70623          	sb	a5,-1076(a4) # 20000f02 <i2c_in_repstart>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:416
-                    I2C_ITConfig(I2C_IT_BUF, DISABLE);
+                I2C_ClearFlag(I2C_FLAG_AF);
 2000033e:	e0001097          	auipc	ra,0xe0001
 20000342:	dce080e7          	jalr	-562(ra) # 110c <I2C_ITConfig>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:417
-                    I2C_ITConfig(I2C_IT_EVT, DISABLE);
+                I2C_AcknowledgeConfig(ENABLE);
 20000346:	4581                	li	a1,0
 20000348:	20000513          	li	a0,512
 2000034c:	e0001097          	auipc	ra,0xe0001
 20000350:	dc0080e7          	jalr	-576(ra) # 110c <I2C_ITConfig>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:418
-                    I2C_ITConfig(I2C_IT_ERR, DISABLE);
+                I2C_DBG("  Nack received\n");
 20000354:	4581                	li	a1,0
 20000356:	10000513          	li	a0,256
 2000035a:	e0001097          	auipc	ra,0xe0001
 2000035e:	db2080e7          	jalr	-590(ra) # 110c <I2C_ITConfig>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:419
-                    I2C_GenerateSTART(ENABLE);
+
 20000362:	4505                	li	a0,1
 20000364:	e0001097          	auipc	ra,0xe0001
 20000368:	d42080e7          	jalr	-702(ra) # 10a6 <I2C_GenerateSTART>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:420
-                    i2c_state = I2C_READY;
+                /* leave slave receiver state */
 2000036c:	80018523          	sb	zero,-2038(gp) # 20000f0a <i2c_state>
 20000370:	bd85                	j	200001e0 <I2C_IRQHandler+0xb4>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:356
-                    I2C_AcknowledgeConfig(DISABLE);
+                }
 20000372:	4501                	li	a0,0
 20000374:	e0001097          	auipc	ra,0xe0001
 20000378:	d76080e7          	jalr	-650(ra) # 10ea <I2C_AcknowledgeConfig>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:357
-                    is_nack_sent = true;
+
 2000037c:	4785                	li	a5,1
 2000037e:	80f185a3          	sb	a5,-2037(gp) # 20000f0b <is_nack_sent>
 20000382:	bf31                	j	2000029e <I2C_IRQHandler+0x172>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:373
-                    I2C_AcknowledgeConfig(DISABLE);
+                } else {
 20000384:	4501                	li	a0,0
 20000386:	e0001097          	auipc	ra,0xe0001
 2000038a:	d64080e7          	jalr	-668(ra) # 10ea <I2C_AcknowledgeConfig>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:376
-                    if (is_nack_sent) {
+                    I2C_ITConfig(I2C_IT_BUF, DISABLE);
 2000038e:	80b1c783          	lbu	a5,-2037(gp) # 20000f0b <is_nack_sent>
 20000392:	c3a5                	beqz	a5,200003f2 <I2C_IRQHandler+0x2c6>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:377
-                        is_nack_sent = false;
+                    I2C_ITConfig(I2C_IT_EVT, DISABLE);
 20000394:	800185a3          	sb	zero,-2037(gp) # 20000f0b <is_nack_sent>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:378
-                        if (i2c_send_stop) {
+                    I2C_ITConfig(I2C_IT_ERR, DISABLE);
 20000398:	00001797          	auipc	a5,0x1
 2000039c:	b6d7c783          	lbu	a5,-1171(a5) # 20000f05 <i2c_send_stop>
 200003a0:	cb89                	beqz	a5,200003b2 <I2C_IRQHandler+0x286>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:379
-                            I2C_GenerateSTOP(ENABLE);
+                    I2C_GenerateSTART(ENABLE);
 200003a2:	4505                	li	a0,1
 200003a4:	e0001097          	auipc	ra,0xe0001
 200003a8:	d24080e7          	jalr	-732(ra) # 10c8 <I2C_GenerateSTOP>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:389
-                            i2c_state = I2C_READY;
+        if (event & RB_I2C_ADDR) {
 200003ac:	80018523          	sb	zero,-2038(gp) # 20000f0a <i2c_state>
 200003b0:	bf25                	j	200002e8 <I2C_IRQHandler+0x1bc>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:383
-                            i2c_in_repstart = true;
+            }
 200003b2:	4785                	li	a5,1
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:385
-                            I2C_ITConfig(I2C_IT_BUF, DISABLE);
+
 200003b4:	4581                	li	a1,0
 200003b6:	40000513          	li	a0,1024
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:383
-                            i2c_in_repstart = true;
+            }
 200003ba:	00001717          	auipc	a4,0x1
 200003be:	b4f70423          	sb	a5,-1208(a4) # 20000f02 <i2c_in_repstart>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:385
-                            I2C_ITConfig(I2C_IT_BUF, DISABLE);
+
 200003c2:	e0001097          	auipc	ra,0xe0001
 200003c6:	d4a080e7          	jalr	-694(ra) # 110c <I2C_ITConfig>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:386
-                            I2C_ITConfig(I2C_IT_EVT, DISABLE);
+    } else {
 200003ca:	4581                	li	a1,0
 200003cc:	20000513          	li	a0,512
 200003d0:	e0001097          	auipc	ra,0xe0001
 200003d4:	d3c080e7          	jalr	-708(ra) # 110c <I2C_ITConfig>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:387
-                            I2C_ITConfig(I2C_IT_ERR, DISABLE);
+    /* I2C slave */
 200003d8:	4581                	li	a1,0
 200003da:	10000513          	li	a0,256
 200003de:	e0001097          	auipc	ra,0xe0001
 200003e2:	d2e080e7          	jalr	-722(ra) # 110c <I2C_ITConfig>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:388
-                            I2C_GenerateSTART(ENABLE);
+        /* addressed, returned ack */
 200003e6:	4505                	li	a0,1
 200003e8:	e0001097          	auipc	ra,0xe0001
 200003ec:	cbe080e7          	jalr	-834(ra) # 10a6 <I2C_GenerateSTART>
 200003f0:	bf75                	j	200003ac <I2C_IRQHandler+0x280>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:394
-                        is_nack_sent = true;
+                i2c_state = I2C_STX;
 200003f2:	4785                	li	a5,1
 200003f4:	80f185a3          	sb	a5,-2037(gp) # 20000f0b <is_nack_sent>
 200003f8:	bdc5                	j	200002e8 <I2C_IRQHandler+0x1bc>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:429
-        if (event & RB_I2C_ADDR) {
+                    /* copy data to output register */
 200003fa:	00257793          	andi	a5,a0,2
 200003fe:	cb8d                	beqz	a5,20000430 <I2C_IRQHandler+0x304>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:431
-            if (event & ((RB_I2C_TRA << 16) | RB_I2C_TxE)) {
+                    I2C_DBG("  send (%#x)\n", 
 20000400:	000407b7          	lui	a5,0x40
 20000404:	08078793          	addi	a5,a5,128 # 40080 <_data_lma+0x3ee0c>
 20000408:	8fe9                	and	a5,a5,a0
 2000040a:	cfe1                	beqz	a5,200004e2 <I2C_IRQHandler+0x3b6>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:434
-                i2c_state = I2C_STX;
+                    I2C_SendData(0xff);
 2000040c:	4791                	li	a5,4
 2000040e:	80f18523          	sb	a5,-2038(gp) # 20000f0a <i2c_state>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:435
-                i2c_slave_txbuffer_index = 0;
+                    I2C_DBG("  no more data, send 0xff\n");
 20000412:	80018423          	sb	zero,-2040(gp) # 20000f08 <i2c_slave_txbuffer_index>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:436
-                i2c_slave_txbuffer_length = 0;
+                }
 20000416:	800184a3          	sb	zero,-2039(gp) # 20000f09 <i2c_slave_txbuffer_length>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:438
-                if (slave_cb && slave_cb->on_transmit) {
+        } else {
 2000041a:	80c18793          	addi	a5,gp,-2036 # 20000f0c <slave_cb>
 2000041e:	439c                	lw	a5,0(a5)
 20000420:	cb81                	beqz	a5,20000430 <I2C_IRQHandler+0x304>
@@ -769,148 +762,115 @@ void I2C_IRQHandler(void)
 20000422:	439c                	lw	a5,0(a5)
 20000424:	c791                	beqz	a5,20000430 <I2C_IRQHandler+0x304>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:439
-                    slave_cb->on_transmit(i2c_slave_txbuffer, &i2c_slave_txbuffer_length);
+            /* Slave receiver */
 20000426:	80918593          	addi	a1,gp,-2039 # 20000f09 <i2c_slave_txbuffer_length>
 2000042a:	8b818513          	addi	a0,gp,-1864 # 20000fb8 <i2c_slave_txbuffer>
 2000042e:	9782                	jalr	a5
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:449
-        if (event & (RB_I2C_TRA << 16)) { //TODO: STOP?
+                            i2c_slave_rxbuffer[i2c_slave_rxbuffer_index - 1]);
 20000430:	00d41793          	slli	a5,s0,0xd
 20000434:	0e07df63          	bgez	a5,20000532 <I2C_IRQHandler+0x406>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:451
-            I2C_AcknowledgeConfig(ENABLE);
+                    // otherwise nack
 20000438:	4505                	li	a0,1
 2000043a:	e0001097          	auipc	ra,0xe0001
 2000043e:	cb0080e7          	jalr	-848(ra) # 10ea <I2C_AcknowledgeConfig>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:454
-            if (event & RB_I2C_AF) {
+            }
 20000442:	c8c5                	beqz	s1,200004f2 <I2C_IRQHandler+0x3c6>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:456
-                I2C_ClearFlag(I2C_FLAG_AF);
+            if (event & RB_I2C_STOPF) {
 20000444:	10000537          	lui	a0,0x10000
 20000448:	40050513          	addi	a0,a0,1024 # 10000400 <_data_lma+0xffff18c>
 2000044c:	e0001097          	auipc	ra,0xe0001
 20000450:	d0c080e7          	jalr	-756(ra) # 1158 <I2C_ClearFlag>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:457
-                I2C_AcknowledgeConfig(ENABLE);
+                /* ack future responses and leave slave receiver state */
 20000454:	4505                	li	a0,1
 20000456:	e0001097          	auipc	ra,0xe0001
 2000045a:	c94080e7          	jalr	-876(ra) # 10ea <I2C_AcknowledgeConfig>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:463
-                event = 0;
+                if (slave_cb && slave_cb->on_receive) {
 2000045e:	4401                	li	s0,0
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:461
-                i2c_state = I2C_READY;
+
 20000460:	80018523          	sb	zero,-2038(gp) # 20000f0a <i2c_state>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:534
-        I2C_DBG("RB_I2C_ARLO\n");
-    }
-
-    if (event & RB_I2C_OVR) {
 20000464:	6505                	lui	a0,0x1
 20000466:	80050513          	addi	a0,a0,-2048 # 800 <__stack_size+0x600>
 2000046a:	00a477b3          	and	a5,s0,a0
 2000046e:	cb91                	beqz	a5,20000482 <I2C_IRQHandler+0x356>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:535
-        I2C_ClearFlag(RB_I2C_OVR);
 20000470:	e0001097          	auipc	ra,0xe0001
 20000474:	ce8080e7          	jalr	-792(ra) # 1158 <I2C_ClearFlag>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:537
-        
-        i2c_error = I2C_OVR;
 20000478:	4799                	li	a5,6
 2000047a:	00001717          	auipc	a4,0x1
 2000047e:	a8f703a3          	sb	a5,-1401(a4) # 20000f01 <i2c_error>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:541
-        I2C_DBG("RB_I2C_OVR\n");
-    }
-
-    if (event & RB_I2C_PECERR) {
 20000482:	01341793          	slli	a5,s0,0x13
 20000486:	0007dc63          	bgez	a5,2000049e <I2C_IRQHandler+0x372>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:542
-        I2C_ClearFlag(RB_I2C_PECERR);
 2000048a:	6505                	lui	a0,0x1
 2000048c:	e0001097          	auipc	ra,0xe0001
 20000490:	ccc080e7          	jalr	-820(ra) # 1158 <I2C_ClearFlag>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:544
-        
-        i2c_error = I2C_PECERR;
 20000494:	479d                	li	a5,7
 20000496:	00001717          	auipc	a4,0x1
 2000049a:	a6f705a3          	sb	a5,-1429(a4) # 20000f01 <i2c_error>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:548
-        I2C_DBG("RB_I2C_PECERR\n");
-    }
-
-    if (event & RB_I2C_TIMEOUT) {
 2000049e:	01141793          	slli	a5,s0,0x11
 200004a2:	0007dc63          	bgez	a5,200004ba <I2C_IRQHandler+0x38e>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:549
-        I2C_ClearFlag(RB_I2C_TIMEOUT);
 200004a6:	6511                	lui	a0,0x4
 200004a8:	e0001097          	auipc	ra,0xe0001
 200004ac:	cb0080e7          	jalr	-848(ra) # 1158 <I2C_ClearFlag>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:551
-        
-        i2c_error = I2C_TIMEOUT;
 200004b0:	47a1                	li	a5,8
 200004b2:	00001717          	auipc	a4,0x1
 200004b6:	a4f707a3          	sb	a5,-1457(a4) # 20000f01 <i2c_error>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:555
-        I2C_DBG("RB_I2C_TIMEOUT\n");
-    }
-
-    if (event & RB_I2C_SMBALERT) {
 200004ba:	01041793          	slli	a5,s0,0x10
 200004be:	0007dc63          	bgez	a5,200004d6 <I2C_IRQHandler+0x3aa>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:556
-        I2C_ClearFlag(RB_I2C_SMBALERT);
 200004c2:	6521                	lui	a0,0x8
 200004c4:	e0001097          	auipc	ra,0xe0001
 200004c8:	c94080e7          	jalr	-876(ra) # 1158 <I2C_ClearFlag>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:558
-        
-        i2c_error = I2C_SMBALERT;
 200004cc:	47a5                	li	a5,9
 200004ce:	00001717          	auipc	a4,0x1
 200004d2:	a2f709a3          	sb	a5,-1485(a4) # 20000f01 <i2c_error>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:563
-        I2C_DBG("RB_I2C_SMBALERT\n");
-    }
-
-    I2C_DBG("\n");
-}
 200004d6:	4432                	lw	s0,12(sp)
 200004d8:	44a2                	lw	s1,8(sp)
 200004da:	4912                	lw	s2,4(sp)
 200004dc:	0141                	addi	sp,sp,16
 200004de:	30200073          	mret
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:444
-                i2c_state = I2C_SRX;
+                if (i2c_slave_rxbuffer_index < I2C_BUFFER_LENGTH) {
 200004e2:	478d                	li	a5,3
 200004e4:	80f18523          	sb	a5,-2038(gp) # 20000f0a <i2c_state>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:445
-                i2c_slave_rxbuffer_index = 0;
+                    /* put byte in buffer and ack */
 200004e8:	00001797          	auipc	a5,0x1
 200004ec:	a0078fa3          	sb	zero,-1505(a5) # 20000f07 <i2c_slave_rxbuffer_index>
 200004f0:	b781                	j	20000430 <I2C_IRQHandler+0x304>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:466
-            if (event & (RB_I2C_BTF | RB_I2C_TxE)) {
+                /* since we submit rx buffer , we can reset it */
 200004f2:	08447793          	andi	a5,s0,132
 200004f6:	ce0785e3          	beqz	a5,200001e0 <I2C_IRQHandler+0xb4>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:468
-                if (i2c_slave_txbuffer_index < i2c_slave_txbuffer_length) {
+            }
 200004fa:	8081c783          	lbu	a5,-2040(gp) # 20000f08 <i2c_slave_txbuffer_index>
 200004fe:	8091c703          	lbu	a4,-2039(gp) # 20000f09 <i2c_slave_txbuffer_length>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:474
-                    I2C_SendData(0xff);
+                I2C_AcknowledgeConfig(ENABLE);
 20000502:	0ff00513          	li	a0,255
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:468
-                if (i2c_slave_txbuffer_index < i2c_slave_txbuffer_length) {
+            }
 20000506:	02e7f163          	bgeu	a5,a4,20000528 <I2C_IRQHandler+0x3fc>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:470
-                    I2C_SendData(i2c_slave_txbuffer[i2c_slave_txbuffer_index++]);
+            if (event & RB_I2C_AF) {  
 2000050a:	80818793          	addi	a5,gp,-2040 # 20000f08 <i2c_slave_txbuffer_index>
 2000050e:	0007c783          	lbu	a5,0(a5)
 20000512:	0ff7f793          	andi	a5,a5,255
@@ -920,27 +880,27 @@ void I2C_IRQHandler(void)
 20000522:	97ba                	add	a5,a5,a4
 20000524:	0007c503          	lbu	a0,0(a5)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:474
-                    I2C_SendData(0xff);
+                I2C_AcknowledgeConfig(ENABLE);
 20000528:	e0001097          	auipc	ra,0xe0001
 2000052c:	c02080e7          	jalr	-1022(ra) # 112a <I2C_SendData>
 20000530:	b945                	j	200001e0 <I2C_IRQHandler+0xb4>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:482
-            if (event & RB_I2C_RxNE) {
+
 20000532:	04047793          	andi	a5,s0,64
 20000536:	c7a9                	beqz	a5,20000580 <I2C_IRQHandler+0x454>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:484
-                if (i2c_slave_rxbuffer_index < I2C_BUFFER_LENGTH) {
+        I2C_DBG("RB_I2C_BERR\n");
 20000538:	00001717          	auipc	a4,0x1
 2000053c:	9cf74703          	lbu	a4,-1585(a4) # 20000f07 <i2c_slave_rxbuffer_index>
 20000540:	47fd                	li	a5,31
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:492
-                    I2C_AcknowledgeConfig(DISABLE);
+    }
 20000542:	4501                	li	a0,0
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:484
-                if (i2c_slave_rxbuffer_index < I2C_BUFFER_LENGTH) {
+        I2C_DBG("RB_I2C_BERR\n");
 20000544:	02e7ea63          	bltu	a5,a4,20000578 <I2C_IRQHandler+0x44c>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:486
-                    i2c_slave_rxbuffer[i2c_slave_rxbuffer_index++] = I2C_ReceiveData();
+
 20000548:	00001797          	auipc	a5,0x1
 2000054c:	9bf78793          	addi	a5,a5,-1601 # 20000f07 <i2c_slave_rxbuffer_index>
 20000550:	0007c903          	lbu	s2,0(a5)
@@ -954,24 +914,24 @@ void I2C_IRQHandler(void)
 20000570:	993e                	add	s2,s2,a5
 20000572:	00a90023          	sb	a0,0(s2)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:487
-                    I2C_AcknowledgeConfig(ENABLE);
+    if (event & RB_I2C_ARLO) {
 20000576:	4505                	li	a0,1
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:492
-                    I2C_AcknowledgeConfig(DISABLE);
+    }
 20000578:	e0001097          	auipc	ra,0xe0001
 2000057c:	b72080e7          	jalr	-1166(ra) # 10ea <I2C_AcknowledgeConfig>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:496
-            if (event & RB_I2C_STOPF) {
+        
 20000580:	01047793          	andi	a5,s0,16
 20000584:	cb95                	beqz	a5,200005b8 <I2C_IRQHandler+0x48c>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:498
-                R16_I2C_CTRL1 |= RB_I2C_PE; //clear flag
+        I2C_DBG("RB_I2C_OVR\n");
 20000586:	40005737          	lui	a4,0x40005
 2000058a:	80075783          	lhu	a5,-2048(a4) # 40004800 <_eusrstack+0x1fffc800>
 2000058e:	0017e793          	ori	a5,a5,1
 20000592:	80f71023          	sh	a5,-2048(a4)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:503
-                if (slave_cb && slave_cb->on_receive) {
+        
 20000596:	80c18793          	addi	a5,gp,-2036 # 20000f0c <slave_cb>
 2000059a:	439c                	lw	a5,0(a5)
 2000059c:	cb91                	beqz	a5,200005b0 <I2C_IRQHandler+0x484>
@@ -979,26 +939,26 @@ void I2C_IRQHandler(void)
 2000059e:	43dc                	lw	a5,4(a5)
 200005a0:	cb81                	beqz	a5,200005b0 <I2C_IRQHandler+0x484>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:504
-                    slave_cb->on_receive(i2c_slave_rxbuffer, i2c_slave_rxbuffer_index);
+        i2c_error = I2C_PECERR;
 200005a2:	00001597          	auipc	a1,0x1
 200005a6:	9655c583          	lbu	a1,-1691(a1) # 20000f07 <i2c_slave_rxbuffer_index>
 200005aa:	89818513          	addi	a0,gp,-1896 # 20000f98 <i2c_slave_rxbuffer>
 200005ae:	9782                	jalr	a5
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:507
-                i2c_slave_rxbuffer_index = 0;
+
 200005b0:	00001797          	auipc	a5,0x1
 200005b4:	94078ba3          	sb	zero,-1705(a5) # 20000f07 <i2c_slave_rxbuffer_index>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:510
-            if (event & RB_I2C_AF) {  
+        
 200005b8:	c20484e3          	beqz	s1,200001e0 <I2C_IRQHandler+0xb4>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:511
-                I2C_ClearFlag(I2C_FLAG_AF);
+        i2c_error = I2C_TIMEOUT;
 200005bc:	10000537          	lui	a0,0x10000
 200005c0:	40050513          	addi	a0,a0,1024 # 10000400 <_data_lma+0xffff18c>
 200005c4:	e0001097          	auipc	ra,0xe0001
 200005c8:	b94080e7          	jalr	-1132(ra) # 1158 <I2C_ClearFlag>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/app_i2c.c:514
-                I2C_AcknowledgeConfig(ENABLE);
+
 200005cc:	4505                	li	a0,1
 200005ce:	e0001097          	auipc	ra,0xe0001
 200005d2:	b1c080e7          	jalr	-1252(ra) # 10ea <I2C_AcknowledgeConfig>
@@ -2488,33 +2448,33 @@ handle_reset:
 00000fa2 <print_console>:
 print_console():
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:23
-
+uint8_t RxBuff[100];
      fa2:	1141                	addi	sp,sp,-16
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:26
-    GPIOA_ModeCfg(GPIO_Pin_6, GPIO_ModeIN_PU);      // RXD
+
      fa4:	45d1                	li	a1,20
      fa6:	20000517          	auipc	a0,0x20000
      faa:	f4650513          	addi	a0,a0,-186 # 20000eec <_highcode_vma_end>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:23
-
+uint8_t RxBuff[100];
      fae:	c422                	sw	s0,8(sp)
      fb0:	c606                	sw	ra,12(sp)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:32
-    }
+    {
      fb2:	81418413          	addi	s0,gp,-2028 # 20000f14 <RxBuff>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:26
-    GPIOA_ModeCfg(GPIO_Pin_6, GPIO_ModeIN_PU);      // RXD
+
      fb6:	2ca1                	jal	120e <UART1_SendString>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:32
-    }
+    {
      fb8:	81418513          	addi	a0,gp,-2028 # 20000f14 <RxBuff>
      fbc:	2cad                	jal	1236 <UART1_RecvString>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:33
-}
+    	GPIOA_SetBits(GPIO_Pin_9);
      fbe:	0ff57793          	andi	a5,a0,255
      fc2:	dbfd                	beqz	a5,fb8 <print_console+0x16>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:35
-{
+}
      fc4:	85be                	mv	a1,a5
      fc6:	8522                	mv	a0,s0
      fc8:	2499                	jal	120e <UART1_SendString>
@@ -2523,43 +2483,43 @@ print_console():
 00000fcc <main>:
 main():
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:68
-    //mDelaymS(5000);
+		UART1_SendString("\r\n", strlen("\r\n"));
      fcc:	1141                	addi	sp,sp,-16
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:70
-    {
+		GPIOB_SetBits(GPIO_Pin_8);
      fce:	04800513          	li	a0,72
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:68
-    //mDelaymS(5000);
+		UART1_SendString("\r\n", strlen("\r\n"));
      fd2:	c606                	sw	ra,12(sp)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:70
-    {
+		GPIOB_SetBits(GPIO_Pin_8);
      fd4:	1ffff097          	auipc	ra,0x1ffff
      fd8:	604080e7          	jalr	1540(ra) # 200005d8 <SetSysClock>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:71
-    	mDelaymS(1000);
+		GPIOB_SetBits(GPIO_Pin_9);
      fdc:	40001737          	lui	a4,0x40001
      fe0:	0a872783          	lw	a5,168(a4) # 400010a8 <_eusrstack+0x1fff90a8>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:72
-        GPIOA_SetBits(GPIO_Pin_0);
+
      fe4:	4585                	li	a1,1
      fe6:	10000513          	li	a0,256
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:71
-    	mDelaymS(1000);
+		GPIOB_SetBits(GPIO_Pin_9);
      fea:	2007e793          	ori	a5,a5,512
      fee:	0af72423          	sw	a5,168(a4)
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:72
-        GPIOA_SetBits(GPIO_Pin_0);
+
      ff2:	2039                	jal	1000 <GPIOA_ModeCfg>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:73
-//    	UART1_SendString("Start", sizeof("Start"));
+		GPIOB_SetBits(GPIO_Pin_16);
      ff4:	458d                	li	a1,3
      ff6:	20000513          	li	a0,512
      ffa:	2019                	jal	1000 <GPIOA_ModeCfg>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:74
-//    	UART1_Reset();
+		GPIOB_SetBits(GPIO_Pin_17);
      ffc:	22c5                	jal	11dc <UART1_DefInit>
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/obj/../src/Main.c:75
-//    	UART1_SendByte(readHumidity(1));
+
      ffe:	3755                	jal	fa2 <print_console>
 
 00001000 <GPIOA_ModeCfg>:

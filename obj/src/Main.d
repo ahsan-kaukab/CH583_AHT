@@ -7,6 +7,7 @@ src/Main.o: ../src/Main.c ../StdPeriphDriver/inc/CH58x_common.h \
  ../StdPeriphDriver/inc/CH58x_sys.h ../StdPeriphDriver/inc/CH58x_timer.h \
  ../StdPeriphDriver/inc/CH58x_spi.h ../StdPeriphDriver/inc/CH58x_usbdev.h \
  ../StdPeriphDriver/inc/CH58x_usbhost.h ../StdPeriphDriver/inc/ISP583.h \
+ ../StdPeriphDriver/inc/CH58x_adc.h \
  /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/inc/app_i2c.h \
  /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/inc/AHT.h
 
@@ -43,6 +44,8 @@ src/Main.o: ../src/Main.c ../StdPeriphDriver/inc/CH58x_common.h \
 ../StdPeriphDriver/inc/CH58x_usbhost.h:
 
 ../StdPeriphDriver/inc/ISP583.h:
+
+../StdPeriphDriver/inc/CH58x_adc.h:
 
 /home/flinux/Downloads/ch583-main/EVT/EXAM/my_code_new/inc/app_i2c.h:
 

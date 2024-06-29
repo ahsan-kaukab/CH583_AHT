@@ -14,17 +14,22 @@
  * */
 
 #include "CH58x_common.h"
+#include "CH58x_adc.h"
 #include "app_i2c.h"
 #include "AHT.h"
 
+
 uint8_t TxBuff[] = "Hello\r\n";
 uint8_t RxBuff[100];
+uint16_t adcBuff[40];
 uint8_t trigB;
+
+volatile uint8_t adclen;
+volatile uint8_t DMA_end = 0;
 
 void button_press()
 {
     GPIOA_ModeCfg(GPIO_Pin_6, GPIO_ModeIN_PU);      // RXD
-    GPIOA_ModeCfg(GPIO_Pin_7, GPIO_ModeOut_PP_5mA); // TXD
 
     while(GPIOA_ReadPortPin(6))
     {
@@ -34,22 +39,115 @@ void button_press()
 void switch_on()
 {
 	GPIOA_ModeCfg(GPIO_Pin_6, GPIO_ModeIN_PU);      // RXD
-	GPIOA_ModeCfg(GPIO_Pin_7, GPIO_ModeOut_PP_5mA); // TXD
 
 	if(GPIOA_ReadPortPin(6))
 	{
 		GPIOA_SetBits(GPIO_Pin_9);
 	}
 }
-void sendFloatOverUART(float value) {
-    char buffer[20]; // Adjust the buffer size as needed
 
-    // Convert float to string with two decimal places
-    snprintf(buffer, sizeof(buffer), "%.2f", value);
+void button_press_led_blink()
+{
+	//GPIOB_ModeCfg(GPIO_Pin_4, GPIO_ModeIN_PU);      // RXD
+	//GPIOB_SetBits(GPIO_Pin_4);
 
-    // Send the string over UART
-    UART1_SendString(buffer, strlen(buffer));
+//	GPIOB_ModeCfg(GPIO_Pin_8, GPIO_ModeOut_PP_5mA);
+//	GPIOB_ModeCfg(GPIO_Pin_9, GPIO_ModeOut_PP_5mA);
+//
+//	GPIOB_ModeCfg(GPIO_Pin_16, GPIO_ModeOut_PP_5mA);
+//	GPIOB_ModeCfg(GPIO_Pin_17, GPIO_ModeOut_PP_5mA);
+//
+//	GPIOB_ModeCfg(GPIO_Pin_20, GPIO_ModeOut_PP_5mA);
+//	GPIOB_ModeCfg(GPIO_Pin_21, GPIO_ModeOut_PP_5mA);
+
+	UART1_SendString("\r\n", strlen("\r\n"));
+	UART1_SendString("Hello from button_press_led_blink", strlen("Hello from button_press_led_blink"));
+	UART1_SendString("\r\n", strlen("\r\n"));
+
+	if(GPIOB_ReadPortPin(4))
+	{
+		UART1_SendString("\r\n", strlen("\r\n"));
+		UART1_SendString("Button read successful", strlen("Button read successful"));
+		UART1_SendString("\r\n", strlen("\r\n"));
+
+		GPIOB_SetBits(GPIO_Pin_8);
+		GPIOB_SetBits(GPIO_Pin_9);
+
+		GPIOB_SetBits(GPIO_Pin_16);
+		GPIOB_SetBits(GPIO_Pin_17);
+
+		GPIOB_SetBits(GPIO_Pin_20);
+		GPIOB_SetBits(GPIO_Pin_21);
+	}
 }
+
+void touch_test()
+{
+	uint8_t      i;
+	/* TouchKey采样：选择adc通道 2 做采样，对应 PA12 */
+	//PRINT("\n5.TouchKey sampling...\n");
+//	GPIOA_ModeCfg(GPIO_Pin_12, GPIO_ModeIN_Floating);
+//	TouchKey_ChSampInit();
+//	ADC_ChannelCfg(2);
+
+	for(i = 0; i < 20; i++)
+	{
+		adcBuff[i] = TouchKey_ExcutSingleConver(0x10, 0); // 连续采样20次
+	}
+	for(i = 0; i < 20; i++)
+	{
+		//PRINT("%d \n", adcBuff[i]);
+		char temp_char[2];
+		sprintf(temp_char, "%u", adcBuff[i]);
+		UART1_SendString("\r\n", strlen("\r\n"));
+		UART1_SendString("Touch Sampling Value is :: ", strlen("Touch Sampling Value is :: "));
+		UART1_SendString(temp_char, strlen(temp_char));
+		UART1_SendString("\r\n", strlen("\r\n"));
+	}
+    ADC_StartUp();
+    while(adclen < 20);
+    PFIC_DisableIRQ(ADC_IRQn);
+    for(i = 0; i < 20; i++)
+    {
+//        PRINT("%d \n", adcBuff[i]);
+		char temp_char[2];
+		sprintf(temp_char, "%u", adcBuff[i]);
+		UART1_SendString("\r\n", strlen("\r\n"));
+		UART1_SendString("Touch Sampling Value is :: ", strlen("Touch Sampling Value is :: "));
+		UART1_SendString(temp_char, strlen(temp_char));
+		UART1_SendString("\r\n", strlen("\r\n"));
+		mDelaymS(500);
+    }
+}
+
+void test_aht()
+{
+	char temp_char[4];
+
+	uint32_t temp_temperature  = AHT21_Read_Temperature();
+	sprintf(temp_char, "%u", temp_temperature);
+
+	UART1_SendString("\r\n", strlen("\r\n"));
+	UART1_SendString("Temperature Value is :: ", strlen("Temperature Value is :: "));
+	UART1_SendString(temp_char, strlen(temp_char));
+	UART1_SendString("\r\n", strlen("\r\n"));
+	mDelaymS(1000);
+
+	temp_char[4];
+	uint32_t temp_humid  = AHT21_Read_Humidity();
+	sprintf(temp_char, "%u", temp_humid);
+
+	UART1_SendString("\r\n", strlen("\r\n"));
+	UART1_SendString("Humidity Value is :: ", strlen("Humidity Value is :: "));
+	UART1_SendString(temp_char, strlen(temp_char));
+	UART1_SendString("\r\n", strlen("\r\n"));
+	mDelaymS(1000);
+	//sendFloatOverUART(251.2);
+	//sendFloatOverUART(readTemperature(0));
+	//UART1_SendString("\n", strlen("\n"));
+	mDelaymS(500);
+}
+
 int main()
 {
     uint8_t len;
@@ -71,53 +169,73 @@ int main()
     //AHT21_init();
 
     //mDelaymS(5000);
-    AHT21_init();
+    GPIOB_ModeCfg(GPIO_Pin_4, GPIO_ModeIN_PU);      // RXD
+
+	GPIOB_ModeCfg(GPIO_Pin_8, GPIO_ModeOut_PP_20mA);
+	GPIOB_ModeCfg(GPIO_Pin_9, GPIO_ModeOut_PP_20mA);
+
+	GPIOB_ModeCfg(GPIO_Pin_16, GPIO_ModeOut_PP_20mA);
+	GPIOB_ModeCfg(GPIO_Pin_17, GPIO_ModeOut_PP_20mA);
+
+	GPIOB_ModeCfg(GPIO_Pin_20, GPIO_ModeOut_PP_20mA);
+	GPIOB_ModeCfg(GPIO_Pin_21, GPIO_ModeOut_PP_20mA);
+
+	GPIOB_SetBits(GPIO_Pin_8);
+	GPIOB_SetBits(GPIO_Pin_9);
+
+	GPIOB_SetBits(GPIO_Pin_16);
+	GPIOB_SetBits(GPIO_Pin_17);
+
+	GPIOB_SetBits(GPIO_Pin_20);
+	GPIOB_SetBits(GPIO_Pin_21);
+
+	GPIOA_ModeCfg(GPIO_Pin_12, GPIO_ModeIN_Floating);
+	TouchKey_ChSampInit();
+	ADC_ChannelCfg(2);
+	touch_test();
+    // init AHT sensor
+    //AHT21_init();
+
     while(1)
     {
-    	//mDelaymS(5000);
-        //GPIOA_SetBits(GPIO_Pin_0);
-    	//UART1_SendString("Start\n", sizeof("Start"));
-    	//UART1_Reset();
-    	//UART1_SendByte(readHumidity(1));
-    	//mDelaymS(100);
-    	//UART1_SendString("Temperature: ", strlen("Temperature: "));
-//        if(AHT21_init() == 0)
-//        {
-//        	UART1_SendString("AHT init successfull \n", strlen("AHT init successfull \n"));
-//        }
-//        else
-//        {
-//        	UART1_SendString("AHT init is not successfull \n", strlen("AHT init is not successfull \n"));
-//        	mDelaymS(500);
-//        	return 0;
-//        }
-        //mDelaymS(100);
-        //UART1_SendString("S-2\n", sizeof("S-2"));
-        //UART1_Reset();
-    	char temp_char[4];
-    	uint32_t temp_temperature  = AHT21_Read_Temperature();
-    	sprintf(temp_char, "%u", temp_temperature);
+    	//test_aht();
+    	//button_press_led_blink();
+    	//touch_test();
+    	//mDelaymS(200);
+    	//button_press_led_blink();
+    	//mDelaymS(200);
 
-    	UART1_SendString("\r\n", strlen("\r\n"));
-    	UART1_SendString("Temperature Value is :: ", strlen("Temperature Value is :: "));
-    	UART1_SendString(temp_char, strlen(temp_char));
-    	UART1_SendString("\r\n", strlen("\r\n"));
-    	mDelaymS(1000);
-
-    	temp_char[4];
-    	uint32_t temp_humid  = AHT21_Read_Humidity();
-    	sprintf(temp_char, "%u", temp_humid);
-
-    	UART1_SendString("\r\n", strlen("\r\n"));
-    	UART1_SendString("Humidity Value is :: ", strlen("Humidity Value is :: "));
-    	UART1_SendString(temp_char, strlen(temp_char));
-    	UART1_SendString("\r\n", strlen("\r\n"));
-    	mDelaymS(1000);
-    	//sendFloatOverUART(251.2);
-    	//sendFloatOverUART(readTemperature(0));
-    	//UART1_SendString("\n", strlen("\n"));
-        mDelaymS(500);
         //GPIOA_ResetBits(GPIO_Pin_0);
+    }
+}
+
+/*********************************************************************
+ * @fn      ADC_IRQHandler
+ *
+ * @brief   ADC中断函数
+ *
+ * @return  none
+ */
+__INTERRUPT
+__HIGH_CODE
+void ADC_IRQHandler(void) //adc中断服务程序
+{
+    if(ADC_GetDMAStatus())
+    {
+        ADC_StopDMA();
+        R16_ADC_DMA_BEG = ((uint32_t)adcBuff) & 0xffff;
+        ADC_ClearDMAFlag();
+        DMA_end = 1;
+    }
+    if(ADC_GetITStatus())
+    {
+        ADC_ClearITFlag();
+        if(adclen < 20)
+        {
+            adcBuff[adclen] = ADC_ReadConverValue();
+            ADC_StartUp(); // 作用清除中断标志并开启新一轮采样
+        }
+        adclen++;
     }
 }
 
