@@ -6,17 +6,20 @@
 C_SRCS += \
 ../src/AHT.c \
 ../src/Main.c \
-../src/app_i2c.c 
+../src/app_i2c.c \
+../src/ntc.c 
 
 OBJS += \
 ./src/AHT.o \
 ./src/Main.o \
-./src/app_i2c.o 
+./src/app_i2c.o \
+./src/ntc.o 
 
 C_DEPS += \
 ./src/AHT.d \
 ./src/Main.d \
-./src/app_i2c.d 
+./src/app_i2c.d \
+./src/ntc.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

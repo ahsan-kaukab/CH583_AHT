@@ -17,6 +17,7 @@
 #include "CH58x_adc.h"
 #include "app_i2c.h"
 #include "AHT.h"
+#include "ntc.h"
 
 
 uint8_t TxBuff[] = "Hello\r\n";
@@ -60,25 +61,25 @@ void button_press_led_blink()
 //	GPIOB_ModeCfg(GPIO_Pin_20, GPIO_ModeOut_PP_5mA);
 //	GPIOB_ModeCfg(GPIO_Pin_21, GPIO_ModeOut_PP_5mA);
 
-	UART1_SendString("\r\n", strlen("\r\n"));
-	UART1_SendString("Hello from button_press_led_blink", strlen("Hello from button_press_led_blink"));
-	UART1_SendString("\r\n", strlen("\r\n"));
-
-	if(GPIOB_ReadPortPin(4))
-	{
-		UART1_SendString("\r\n", strlen("\r\n"));
-		UART1_SendString("Button read successful", strlen("Button read successful"));
-		UART1_SendString("\r\n", strlen("\r\n"));
-
-		GPIOB_SetBits(GPIO_Pin_8);
-		GPIOB_SetBits(GPIO_Pin_9);
-
-		GPIOB_SetBits(GPIO_Pin_16);
-		GPIOB_SetBits(GPIO_Pin_17);
-
-		GPIOB_SetBits(GPIO_Pin_20);
-		GPIOB_SetBits(GPIO_Pin_21);
-	}
+//	UART1_SendString("\r\n", strlen("\r\n"));
+//	UART1_SendString("Hello from button_press_led_blink", strlen("Hello from button_press_led_blink"));
+//	UART1_SendString("\r\n", strlen("\r\n"));
+//
+//	if(GPIOB_ReadPortPin(4))
+//	{
+//		UART1_SendString("\r\n", strlen("\r\n"));
+//		UART1_SendString("Button read successful", strlen("Button read successful"));
+//		UART1_SendString("\r\n", strlen("\r\n"));
+//
+//		GPIOB_SetBits(LED1);
+//		GPIOB_SetBits(GPIO_Pin_9);
+//
+//		GPIOB_SetBits(GPIO_Pin_16);
+//		GPIOB_SetBits(GPIO_Pin_17);
+//
+//		GPIOB_SetBits(GPIO_Pin_20);
+//		GPIOB_SetBits(GPIO_Pin_21);
+//	}
 }
 
 void touch_test()
@@ -148,6 +149,30 @@ void test_aht()
 	mDelaymS(500);
 }
 
+void read_ntc_adc()
+{
+	uint8_t      i;
+
+	for(i = 0; i < 20; i++)
+	{
+		adcBuff[i] = TouchKey_ExcutSingleConver(0x10, 0); // 连续采样20次
+	}
+	for(i = 0; i < 20; i++)
+	{
+		//PRINT("%d \n", adcBuff[i]);
+		char temp_char[4];
+		uint32_t temp_ntc = ntc_convertToC(adcBuff[i]);
+		sprintf(temp_char, "%u", temp_ntc);
+		UART1_SendString("\r\n", strlen("\r\n"));
+		UART1_SendString("NTC Value in C degree is :: ", strlen("NTC Value in C degree is :: "));
+		UART1_SendString(temp_char, strlen(temp_char));
+		UART1_SendString("\r\n", strlen("\r\n"));
+	}
+    ADC_StartUp();
+    while(adclen < 20);
+    PFIC_DisableIRQ(ADC_IRQn);
+}
+
 int main()
 {
     uint8_t len;
@@ -190,16 +215,16 @@ int main()
 	GPIOB_SetBits(GPIO_Pin_21);
 
 	GPIOA_ModeCfg(GPIO_Pin_12, GPIO_ModeIN_Floating);
-	TouchKey_ChSampInit();
-	ADC_ChannelCfg(2);
-	touch_test();
+	//TouchKey_ChSampInit();
+	//ADC_ChannelCfg(2);
+	//touch_test();
     // init AHT sensor
     //AHT21_init();
 
     while(1)
     {
     	//test_aht();
-    	//button_press_led_blink();
+    	button_press_led_blink();
     	//touch_test();
     	//mDelaymS(200);
     	//button_press_led_blink();
