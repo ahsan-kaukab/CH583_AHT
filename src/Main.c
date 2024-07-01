@@ -87,44 +87,7 @@ void button_press_led_blink()
 	}
 }
 
-void touch_test()
-{
-	uint8_t      i;
-	/* TouchKey采样：选择adc通道 2 做采样，对应 PA12 */
-	//PRINT("\n5.TouchKey sampling...\n");
-//	GPIOA_ModeCfg(GPIO_Pin_12, GPIO_ModeIN_Floating);
-//	TouchKey_ChSampInit();
-//	ADC_ChannelCfg(2);
 
-	for(i = 0; i < 20; i++)
-	{
-		adcBuff[i] = TouchKey_ExcutSingleConver(0x10, 0); // 连续采样20次
-	}
-	for(i = 0; i < 20; i++)
-	{
-		//PRINT("%d \n", adcBuff[i]);
-		char temp_char[2];
-		sprintf(temp_char, "%u", adcBuff[i]);
-		UART1_SendString("\r\n", strlen("\r\n"));
-		UART1_SendString("Touch Sampling Value is :: ", strlen("Touch Sampling Value is :: "));
-		UART1_SendString(temp_char, strlen(temp_char));
-		UART1_SendString("\r\n", strlen("\r\n"));
-	}
-    ADC_StartUp();
-    while(adclen < 20);
-    PFIC_DisableIRQ(ADC_IRQn);
-    for(i = 0; i < 20; i++)
-    {
-//        PRINT("%d \n", adcBuff[i]);
-		char temp_char[2];
-		sprintf(temp_char, "%u", adcBuff[i]);
-		UART1_SendString("\r\n", strlen("\r\n"));
-		UART1_SendString("Touch Sampling Value is :: ", strlen("Touch Sampling Value is :: "));
-		UART1_SendString(temp_char, strlen(temp_char));
-		UART1_SendString("\r\n", strlen("\r\n"));
-		mDelaymS(500);
-    }
-}
 
 void test_aht()
 {
@@ -154,9 +117,14 @@ void test_aht()
 	mDelaymS(500);
 }
 
-void read_ntc_adc()
+void touch_test()
 {
 	uint8_t      i;
+	/* TouchKey采样：选择adc通道 2 做采样，对应 PA12 */
+	//PRINT("\n5.TouchKey sampling...\n");
+//	GPIOA_ModeCfg(GPIO_Pin_12, GPIO_ModeIN_Floating);
+//	TouchKey_ChSampInit();
+//	ADC_ChannelCfg(2);
 
 	for(i = 0; i < 20; i++)
 	{
@@ -165,14 +133,51 @@ void read_ntc_adc()
 	for(i = 0; i < 20; i++)
 	{
 		//PRINT("%d \n", adcBuff[i]);
+		char temp_char[2];
+		sprintf(temp_char, "%u", adcBuff[i]);
+		UART1_SendString("\r\n", strlen("\r\n"));
+		UART1_SendString("Touch Sampling Value is :: ", strlen("Touch Sampling Value is :: "));
+		UART1_SendString(temp_char, strlen(temp_char));
+		UART1_SendString("\r\n", strlen("\r\n"));
+	}
+	ADC_StartUp();
+	while(adclen < 20);
+	PFIC_DisableIRQ(ADC_IRQn);
+//	for(i = 0; i < 20; i++)
+//	{
+////        PRINT("%d \n", adcBuff[i]);
+//		char temp_char[2];
+//		sprintf(temp_char, "%u", adcBuff[i]);
+//		UART1_SendString("\r\n", strlen("\r\n"));
+//		UART1_SendString("Touch Sampling Value is :: ", strlen("Touch Sampling Value is :: "));
+//		UART1_SendString(temp_char, strlen(temp_char));
+//		UART1_SendString("\r\n", strlen("\r\n"));
+//		mDelaymS(500);
+//	}
+}
+
+void read_ntc_adc()
+{
+	uint8_t i;
+
+	for(i = 0; i < 20; i++)
+	{
+		adcBuff[i] = ADC_ExcutSingleConver();
+	}
+	for(i = 0; i < 20; i++)
+	{
+		//PRINT("%d \n", adcBuff[i]);
 		char temp_char[4];
-		uint32_t temp_ntc = ntc_convertToC(adcBuff[i]);
+		uint32_t temp_ntc = adc_to_temperature_celsius(adcBuff[i]);
+		//uint32_t temp_ntc = ntc_convertToC(adcBuff[i]);
 		sprintf(temp_char, "%u", temp_ntc);
 		UART1_SendString("\r\n", strlen("\r\n"));
 		UART1_SendString("NTC Value in C degree is :: ", strlen("NTC Value in C degree is :: "));
 		UART1_SendString(temp_char, strlen(temp_char));
 		UART1_SendString("\r\n", strlen("\r\n"));
+	    mDelaymS(1000);
 	}
+
     ADC_StartUp();
     while(adclen < 20);
     PFIC_DisableIRQ(ADC_IRQn);
@@ -216,18 +221,26 @@ int main()
 	//GPIOB_SetBits(GPIO_Pin_16);
 	//GPIOB_SetBits(GPIO_Pin_17);
 
-	GPIOB_SetBits(GPIO_Pin_20);
-	GPIOB_SetBits(GPIO_Pin_21);
+	//GPIOB_SetBits(GPIO_Pin_20);
+	//GPIOB_SetBits(GPIO_Pin_21);
 
 	GPIOA_ModeCfg(GPIO_Pin_12, GPIO_ModeIN_Floating);
+
+	// touch
 	//TouchKey_ChSampInit();
 	//ADC_ChannelCfg(2);
 	//touch_test();
+
+	// NTC sensor
+	ADC_InterTSSampInit();
+	read_ntc_adc();
+
     // init AHT sensor
     //AHT21_init();
 
     while(1)
     {
+    	mDelaymS(1000);
     	//test_aht();
     	//button_press_led_blink();
     	//touch_test();
