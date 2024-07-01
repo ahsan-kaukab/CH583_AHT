@@ -52,34 +52,39 @@ void button_press_led_blink()
 	//GPIOB_ModeCfg(GPIO_Pin_4, GPIO_ModeIN_PU);      // RXD
 	//GPIOB_SetBits(GPIO_Pin_4);
 
-//	GPIOB_ModeCfg(GPIO_Pin_8, GPIO_ModeOut_PP_5mA);
-//	GPIOB_ModeCfg(GPIO_Pin_9, GPIO_ModeOut_PP_5mA);
-//
-//	GPIOB_ModeCfg(GPIO_Pin_16, GPIO_ModeOut_PP_5mA);
-//	GPIOB_ModeCfg(GPIO_Pin_17, GPIO_ModeOut_PP_5mA);
-//
-//	GPIOB_ModeCfg(GPIO_Pin_20, GPIO_ModeOut_PP_5mA);
-//	GPIOB_ModeCfg(GPIO_Pin_21, GPIO_ModeOut_PP_5mA);
+	//GPIOB_ModeCfg(GPIO_Pin_8, GPIO_ModeOut_PP_20mA);
+	//GPIOB_ModeCfg(GPIO_Pin_9, GPIO_ModeOut_PP_20mA);
+	//GPIOB_ModeCfg(GPIO_Pin_16, GPIO_ModeOut_PP_20mA);
 
-//	UART1_SendString("\r\n", strlen("\r\n"));
-//	UART1_SendString("Hello from button_press_led_blink", strlen("Hello from button_press_led_blink"));
-//	UART1_SendString("\r\n", strlen("\r\n"));
-//
-//	if(GPIOB_ReadPortPin(4))
-//	{
-//		UART1_SendString("\r\n", strlen("\r\n"));
-//		UART1_SendString("Button read successful", strlen("Button read successful"));
-//		UART1_SendString("\r\n", strlen("\r\n"));
-//
-//		GPIOB_SetBits(LED1);
-//		GPIOB_SetBits(GPIO_Pin_9);
-//
-//		GPIOB_SetBits(GPIO_Pin_16);
-//		GPIOB_SetBits(GPIO_Pin_17);
-//
+	//UART1_SendString("\r\n", strlen("\r\n"));
+	//UART1_SendString("Hello from button_press_led_blink", strlen("Hello from button_press_led_blink"));
+	//UART1_SendString("\r\n", strlen("\r\n"));
+
+
+	//if(GPIOB_ReadPortPin(4))
+	{
+		//UART1_SendString("\r\n", strlen("\r\n"));
+		//UART1_SendString("Button read successful", strlen("Button read successful"));
+		//UART1_SendString("\r\n", strlen("\r\n"));
+
+		GPIOB_SetBits(GPIO_Pin_8);
+		GPIOB_ResetBits(GPIO_Pin_9);
+		GPIOB_ResetBits(GPIO_Pin_16);
+		mDelaymS(3000);
+
+		GPIOB_ResetBits(GPIO_Pin_8);
+		GPIOB_SetBits(GPIO_Pin_9);
+		GPIOB_ResetBits(GPIO_Pin_16);
+		mDelaymS(3000);
+
+		GPIOB_ResetBits(GPIO_Pin_8);
+		GPIOB_ResetBits(GPIO_Pin_9);
+		GPIOB_SetBits(GPIO_Pin_16);
+		mDelaymS(3000);
+
 //		GPIOB_SetBits(GPIO_Pin_20);
 //		GPIOB_SetBits(GPIO_Pin_21);
-//	}
+	}
 }
 
 void touch_test()
@@ -200,16 +205,16 @@ int main()
 	GPIOB_ModeCfg(GPIO_Pin_9, GPIO_ModeOut_PP_20mA);
 
 	GPIOB_ModeCfg(GPIO_Pin_16, GPIO_ModeOut_PP_20mA);
-	GPIOB_ModeCfg(GPIO_Pin_17, GPIO_ModeOut_PP_20mA);
+	//GPIOB_ModeCfg(GPIO_Pin_17, GPIO_ModeOut_PP_20mA);
 
 	GPIOB_ModeCfg(GPIO_Pin_20, GPIO_ModeOut_PP_20mA);
 	GPIOB_ModeCfg(GPIO_Pin_21, GPIO_ModeOut_PP_20mA);
 
-	GPIOB_SetBits(GPIO_Pin_8);
-	GPIOB_SetBits(GPIO_Pin_9);
+	//GPIOB_SetBits(GPIO_Pin_8);
+	//GPIOB_SetBits(GPIO_Pin_9);
 
-	GPIOB_SetBits(GPIO_Pin_16);
-	GPIOB_SetBits(GPIO_Pin_17);
+	//GPIOB_SetBits(GPIO_Pin_16);
+	//GPIOB_SetBits(GPIO_Pin_17);
 
 	GPIOB_SetBits(GPIO_Pin_20);
 	GPIOB_SetBits(GPIO_Pin_21);
@@ -224,7 +229,7 @@ int main()
     while(1)
     {
     	//test_aht();
-    	button_press_led_blink();
+    	//button_press_led_blink();
     	//touch_test();
     	//mDelaymS(200);
     	//button_press_led_blink();

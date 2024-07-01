@@ -126,8 +126,6 @@ Discarded input sections
                 0x0000000000000000       0x32 ./src/Main.o
  .text.switch_on
                 0x0000000000000000       0x30 ./src/Main.o
- .text.button_press_led_blink
-                0x0000000000000000        0x2 ./src/Main.o
  .text.touch_test
                 0x0000000000000000      0x162 ./src/Main.o
  .text.test_aht
@@ -1040,92 +1038,95 @@ END GROUP
  *fill*         0x0000000020000ec6        0x2 
                 0x0000000020000ec8                PROVIDE (_highcode_vma_end = .)
 
-.text           0x0000000000000ecc      0x44c
+.text           0x0000000000000ecc      0x4c0
                 0x0000000000000ecc                . = ALIGN (0x4)
  *(SORT_NONE(.handle_reset))
  .handle_reset  0x0000000000000ecc       0xb2 ./Startup/startup_CH583.o
                 0x0000000000000ecc                handle_reset
  *(.text)
  *(.text.*)
+ .text.button_press_led_blink
+                0x0000000000000f7e       0xac ./src/Main.o
+                0x0000000000000f7e                button_press_led_blink
  .text.startup.main
-                0x0000000000000f7e       0xbe ./src/Main.o
-                0x0000000000000f7e                main
+                0x000000000000102a       0x86 ./src/Main.o
+                0x000000000000102a                main
  .text.GPIOA_ModeCfg
-                0x000000000000103c       0xa6 ./StdPeriphDriver/CH58x_gpio.o
-                0x000000000000103c                GPIOA_ModeCfg
+                0x00000000000010b0       0xa6 ./StdPeriphDriver/CH58x_gpio.o
+                0x00000000000010b0                GPIOA_ModeCfg
  .text.GPIOB_ModeCfg
-                0x00000000000010e2       0xa6 ./StdPeriphDriver/CH58x_gpio.o
-                0x00000000000010e2                GPIOB_ModeCfg
+                0x0000000000001156       0xa6 ./StdPeriphDriver/CH58x_gpio.o
+                0x0000000000001156                GPIOB_ModeCfg
  .text.I2C_GenerateSTART
-                0x0000000000001188       0x22 ./StdPeriphDriver/CH58x_i2c.o
-                0x0000000000001188                I2C_GenerateSTART
+                0x00000000000011fc       0x22 ./StdPeriphDriver/CH58x_i2c.o
+                0x00000000000011fc                I2C_GenerateSTART
  .text.I2C_GenerateSTOP
-                0x00000000000011aa       0x22 ./StdPeriphDriver/CH58x_i2c.o
-                0x00000000000011aa                I2C_GenerateSTOP
+                0x000000000000121e       0x22 ./StdPeriphDriver/CH58x_i2c.o
+                0x000000000000121e                I2C_GenerateSTOP
  .text.I2C_AcknowledgeConfig
-                0x00000000000011cc       0x22 ./StdPeriphDriver/CH58x_i2c.o
-                0x00000000000011cc                I2C_AcknowledgeConfig
+                0x0000000000001240       0x22 ./StdPeriphDriver/CH58x_i2c.o
+                0x0000000000001240                I2C_AcknowledgeConfig
  .text.I2C_ITConfig
-                0x00000000000011ee       0x1e ./StdPeriphDriver/CH58x_i2c.o
-                0x00000000000011ee                I2C_ITConfig
+                0x0000000000001262       0x1e ./StdPeriphDriver/CH58x_i2c.o
+                0x0000000000001262                I2C_ITConfig
  .text.I2C_SendData
-                0x000000000000120c        0xa ./StdPeriphDriver/CH58x_i2c.o
-                0x000000000000120c                I2C_SendData
+                0x0000000000001280        0xa ./StdPeriphDriver/CH58x_i2c.o
+                0x0000000000001280                I2C_SendData
  .text.I2C_ReceiveData
-                0x0000000000001216        0xe ./StdPeriphDriver/CH58x_i2c.o
-                0x0000000000001216                I2C_ReceiveData
+                0x000000000000128a        0xe ./StdPeriphDriver/CH58x_i2c.o
+                0x000000000000128a                I2C_ReceiveData
  .text.I2C_GetLastEvent
-                0x0000000000001224       0x16 ./StdPeriphDriver/CH58x_i2c.o
-                0x0000000000001224                I2C_GetLastEvent
+                0x0000000000001298       0x16 ./StdPeriphDriver/CH58x_i2c.o
+                0x0000000000001298                I2C_GetLastEvent
  .text.I2C_ClearFlag
-                0x000000000000123a       0x12 ./StdPeriphDriver/CH58x_i2c.o
-                0x000000000000123a                I2C_ClearFlag
+                0x00000000000012ae       0x12 ./StdPeriphDriver/CH58x_i2c.o
+                0x00000000000012ae                I2C_ClearFlag
  .text.GetSysClock
-                0x000000000000124c       0x42 ./StdPeriphDriver/CH58x_sys.o
-                0x000000000000124c                GetSysClock
+                0x00000000000012c0       0x42 ./StdPeriphDriver/CH58x_sys.o
+                0x00000000000012c0                GetSysClock
  .text.UART1_BaudRateCfg
-                0x000000000000128e       0x30 ./StdPeriphDriver/CH58x_uart1.o
-                0x000000000000128e                UART1_BaudRateCfg
+                0x0000000000001302       0x30 ./StdPeriphDriver/CH58x_uart1.o
+                0x0000000000001302                UART1_BaudRateCfg
  .text.UART1_DefInit
-                0x00000000000012be       0x32 ./StdPeriphDriver/CH58x_uart1.o
-                0x00000000000012be                UART1_DefInit
+                0x0000000000001332       0x32 ./StdPeriphDriver/CH58x_uart1.o
+                0x0000000000001332                UART1_DefInit
  *(.rodata)
  *(.rodata*)
- *fill*         0x00000000000012f0        0x0 
+ *fill*         0x0000000000001364        0x0 
  .rodata.GPIOA_ModeCfg
-                0x00000000000012f0       0x14 ./StdPeriphDriver/CH58x_gpio.o
+                0x0000000000001364       0x14 ./StdPeriphDriver/CH58x_gpio.o
  .rodata.GPIOB_ModeCfg
-                0x0000000000001304       0x14 ./StdPeriphDriver/CH58x_gpio.o
+                0x0000000000001378       0x14 ./StdPeriphDriver/CH58x_gpio.o
  *(.sdata2.*)
  *(.glue_7)
  *(.glue_7t)
  *(.gnu.linkonce.t.*)
-                0x0000000000001318                . = ALIGN (0x4)
+                0x000000000000138c                . = ALIGN (0x4)
 
-.rela.dyn       0x0000000000001318        0x0
- .rela.init     0x0000000000001318        0x0 ./src/Main.o
- .rela.vector   0x0000000000001318        0x0 ./src/Main.o
+.rela.dyn       0x000000000000138c        0x0
+ .rela.init     0x000000000000138c        0x0 ./src/Main.o
+ .rela.vector   0x000000000000138c        0x0 ./src/Main.o
  .rela.handle_reset
-                0x0000000000001318        0x0 ./src/Main.o
+                0x000000000000138c        0x0 ./src/Main.o
 
-.fini           0x0000000000001318        0x0
+.fini           0x000000000000138c        0x0
  *(SORT_NONE(.fini))
-                0x0000000000001318                . = ALIGN (0x4)
+                0x000000000000138c                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (_etext = .)
                 [!provide]                        PROVIDE (_eitcm = .)
 
-.preinit_array  0x0000000000001318        0x0
+.preinit_array  0x000000000000138c        0x0
                 [!provide]                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
                 [!provide]                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x0000000000001318        0x0
+.init_array     0x000000000000138c        0x0
                 [!provide]                        PROVIDE (__init_array_start = .)
  *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
  *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
                 [!provide]                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x0000000000001318        0x0
+.fini_array     0x000000000000138c        0x0
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
  *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
@@ -1145,14 +1146,14 @@ END GROUP
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
 
-.dalign         0x0000000020000ec8        0x0 load address 0x0000000000001318
+.dalign         0x0000000020000ec8        0x0 load address 0x000000000000138c
                 0x0000000020000ec8                . = (ORIGIN (RAM) + SIZEOF (.highcode))
 
-.dlalign        0x0000000000001318        0x0
-                0x0000000000001318                . = ALIGN (0x4)
-                0x0000000000001318                PROVIDE (_data_lma = .)
+.dlalign        0x000000000000138c        0x0
+                0x000000000000138c                . = ALIGN (0x4)
+                0x000000000000138c                PROVIDE (_data_lma = .)
 
-.data           0x0000000020000ec8        0x0 load address 0x0000000000001318
+.data           0x0000000020000ec8        0x0 load address 0x000000000000138c
                 0x0000000020000ec8                . = ALIGN (0x4)
                 0x0000000020000ec8                PROVIDE (_data_vma = .)
  *(.gnu.linkonce.r.*)
@@ -1171,7 +1172,7 @@ END GROUP
                 0x0000000020000ec8                . = ALIGN (0x4)
                 0x0000000020000ec8                PROVIDE (_edata = .)
 
-.bss            0x0000000020000ec8       0xc8 load address 0x0000000000001318
+.bss            0x0000000020000ec8       0xc8 load address 0x000000000000138c
                 0x0000000020000ec8                . = ALIGN (0x4)
                 0x0000000020000ec8                PROVIDE (_sbss = .)
  *(.sbss*)
@@ -1232,23 +1233,23 @@ END GROUP
                 0x0000000020008000                PROVIDE (_eusrstack = .)
 OUTPUT(binmy_code_new.elf elf32-littleriscv)
 
-.debug_info     0x0000000000000000     0x7c8c
- .debug_info    0x0000000000000000     0x17e3 ./src/Main.o
- .debug_info    0x00000000000017e3     0x199d ./src/app_i2c.o
- .debug_info    0x0000000000003180      0xe73 ./StdPeriphDriver/CH58x_gpio.o
- .debug_info    0x0000000000003ff3     0x13ca ./StdPeriphDriver/CH58x_i2c.o
- .debug_info    0x00000000000053bd     0x1a62 ./StdPeriphDriver/CH58x_sys.o
- .debug_info    0x0000000000006e1f      0xe4b ./StdPeriphDriver/CH58x_uart1.o
- .debug_info    0x0000000000007c6a       0x22 ./Startup/startup_CH583.o
+.debug_info     0x0000000000000000     0x7cb9
+ .debug_info    0x0000000000000000     0x1810 ./src/Main.o
+ .debug_info    0x0000000000001810     0x199d ./src/app_i2c.o
+ .debug_info    0x00000000000031ad      0xe73 ./StdPeriphDriver/CH58x_gpio.o
+ .debug_info    0x0000000000004020     0x13ca ./StdPeriphDriver/CH58x_i2c.o
+ .debug_info    0x00000000000053ea     0x1a62 ./StdPeriphDriver/CH58x_sys.o
+ .debug_info    0x0000000000006e4c      0xe4b ./StdPeriphDriver/CH58x_uart1.o
+ .debug_info    0x0000000000007c97       0x22 ./Startup/startup_CH583.o
 
-.debug_abbrev   0x0000000000000000     0x13dc
- .debug_abbrev  0x0000000000000000      0x364 ./src/Main.o
- .debug_abbrev  0x0000000000000364      0x33e ./src/app_i2c.o
- .debug_abbrev  0x00000000000006a2      0x268 ./StdPeriphDriver/CH58x_gpio.o
- .debug_abbrev  0x000000000000090a      0x3c2 ./StdPeriphDriver/CH58x_i2c.o
- .debug_abbrev  0x0000000000000ccc      0x454 ./StdPeriphDriver/CH58x_sys.o
- .debug_abbrev  0x0000000000001120      0x2aa ./StdPeriphDriver/CH58x_uart1.o
- .debug_abbrev  0x00000000000013ca       0x12 ./Startup/startup_CH583.o
+.debug_abbrev   0x0000000000000000     0x13c9
+ .debug_abbrev  0x0000000000000000      0x351 ./src/Main.o
+ .debug_abbrev  0x0000000000000351      0x33e ./src/app_i2c.o
+ .debug_abbrev  0x000000000000068f      0x268 ./StdPeriphDriver/CH58x_gpio.o
+ .debug_abbrev  0x00000000000008f7      0x3c2 ./StdPeriphDriver/CH58x_i2c.o
+ .debug_abbrev  0x0000000000000cb9      0x454 ./StdPeriphDriver/CH58x_sys.o
+ .debug_abbrev  0x000000000000110d      0x2aa ./StdPeriphDriver/CH58x_uart1.o
+ .debug_abbrev  0x00000000000013b7       0x12 ./Startup/startup_CH583.o
 
 .debug_loc      0x0000000000000000     0x15ee
  .debug_loc     0x0000000000000000       0xa2 ./src/Main.o
@@ -1283,14 +1284,14 @@ OUTPUT(binmy_code_new.elf elf32-littleriscv)
  .debug_ranges  0x0000000000000298       0x40 ./StdPeriphDriver/CH58x_uart1.o
  .debug_ranges  0x00000000000002d8       0x28 ./Startup/startup_CH583.o
 
-.debug_line     0x0000000000000000     0x539a
- .debug_line    0x0000000000000000      0xa96 ./src/Main.o
- .debug_line    0x0000000000000a96     0x1072 ./src/app_i2c.o
- .debug_line    0x0000000000001b08      0x7a6 ./StdPeriphDriver/CH58x_gpio.o
- .debug_line    0x00000000000022ae      0xf85 ./StdPeriphDriver/CH58x_i2c.o
- .debug_line    0x0000000000003233     0x1a42 ./StdPeriphDriver/CH58x_sys.o
- .debug_line    0x0000000000004c75      0x5da ./StdPeriphDriver/CH58x_uart1.o
- .debug_line    0x000000000000524f      0x14b ./Startup/startup_CH583.o
+.debug_line     0x0000000000000000     0x5434
+ .debug_line    0x0000000000000000      0xb30 ./src/Main.o
+ .debug_line    0x0000000000000b30     0x1072 ./src/app_i2c.o
+ .debug_line    0x0000000000001ba2      0x7a6 ./StdPeriphDriver/CH58x_gpio.o
+ .debug_line    0x0000000000002348      0xf85 ./StdPeriphDriver/CH58x_i2c.o
+ .debug_line    0x00000000000032cd     0x1a42 ./StdPeriphDriver/CH58x_sys.o
+ .debug_line    0x0000000000004d0f      0x5da ./StdPeriphDriver/CH58x_uart1.o
+ .debug_line    0x00000000000052e9      0x14b ./Startup/startup_CH583.o
 
 .debug_str      0x0000000000000000     0x1772
  .debug_str     0x0000000000000000      0xcfa ./src/Main.o
@@ -1319,13 +1320,13 @@ OUTPUT(binmy_code_new.elf elf32-littleriscv)
  .comment       0x0000000000000033       0x33 ../StdPeriphDriver/libISP583.a(ISP583.o)
                                          0x34 (size before relaxing)
 
-.debug_frame    0x0000000000000000      0x614
- .debug_frame   0x0000000000000000      0x10c ./src/Main.o
- .debug_frame   0x000000000000010c       0xdc ./src/app_i2c.o
- .debug_frame   0x00000000000001e8       0x70 ./StdPeriphDriver/CH58x_gpio.o
- .debug_frame   0x0000000000000258      0x1fc ./StdPeriphDriver/CH58x_i2c.o
- .debug_frame   0x0000000000000454      0x124 ./StdPeriphDriver/CH58x_sys.o
- .debug_frame   0x0000000000000578       0x9c ./StdPeriphDriver/CH58x_uart1.o
+.debug_frame    0x0000000000000000      0x630
+ .debug_frame   0x0000000000000000      0x128 ./src/Main.o
+ .debug_frame   0x0000000000000128       0xdc ./src/app_i2c.o
+ .debug_frame   0x0000000000000204       0x70 ./StdPeriphDriver/CH58x_gpio.o
+ .debug_frame   0x0000000000000274      0x1fc ./StdPeriphDriver/CH58x_i2c.o
+ .debug_frame   0x0000000000000470      0x124 ./StdPeriphDriver/CH58x_sys.o
+ .debug_frame   0x0000000000000594       0x9c ./StdPeriphDriver/CH58x_uart1.o
 
 .stabstr        0x0000000000000000      0x117
  .stabstr       0x0000000000000000      0x117 /home/flinux/Downloads/MounRiver_Studio_Community_Linux_x64_V170/MRS_Community/toolchain/RISC-V_Embedded_GCC/bin/../lib/gcc/riscv-none-embed/8.2.0/../../../../riscv-none-embed/lib/rv32imac/ilp32/libnosys.a(close.o)
