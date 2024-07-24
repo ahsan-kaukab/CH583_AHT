@@ -37,14 +37,13 @@ void button_press()
     	GPIOA_SetBits(GPIO_Pin_9);
     }
 }
-void switch_on()
+int switch_on()
 {
-	GPIOA_ModeCfg(GPIO_Pin_6, GPIO_ModeIN_PU);      // RXD
+	//GPIOA_ModeCfg(GPIO_Pin_6, GPIO_ModeIN_PU);      // RXD
 
-	if(GPIOA_ReadPortPin(6))
-	{
-		GPIOA_SetBits(GPIO_Pin_9);
-	}
+	if(GPIOB_ReadPortPin(GPIO_Pin_4))
+		return 1;
+	return 0;
 }
 
 void button_press_led_blink()
@@ -94,6 +93,29 @@ void button_press_led_blink()
 		GPIOB_ResetBits(GPIO_Pin_8);
 		mDelaymS(50);
 	}
+}
+void signal_blink()
+{
+		GPIOB_SetBits(GPIO_Pin_8);
+		GPIOB_ResetBits(GPIO_Pin_9);
+		GPIOB_ResetBits(GPIO_Pin_16);
+		mDelaymS(1000);
+		if(switch_on())
+			return;
+
+		GPIOB_ResetBits(GPIO_Pin_8);
+		GPIOB_SetBits(GPIO_Pin_9);
+		GPIOB_ResetBits(GPIO_Pin_16);
+		mDelaymS(1000);
+		if(switch_on())
+			return;
+
+		GPIOB_ResetBits(GPIO_Pin_8);
+		GPIOB_ResetBits(GPIO_Pin_9);
+		GPIOB_SetBits(GPIO_Pin_16);
+		mDelaymS(1000);
+		if(switch_on())
+			return;
 }
 
 
@@ -251,7 +273,15 @@ int main()
     {
     	//mDelaymS(1000);
     	//test_aht();
-    	button_press_led_blink();
+    	//button_press_led_blink();
+    	if(!switch_on())
+    	{
+    		signal_blink();
+    		GPIOB_ResetBits(GPIO_Pin_8);
+    		GPIOB_ResetBits(GPIO_Pin_9);
+    		GPIOB_ResetBits(GPIO_Pin_16);
+    	}
+
     	//touch_test();
     	//mDelaymS(200);
     	//button_press_led_blink();
