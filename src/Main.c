@@ -61,29 +61,38 @@ void button_press_led_blink()
 	//UART1_SendString("\r\n", strlen("\r\n"));
 
 
-	//if(GPIOB_ReadPortPin(4))
+	if(!GPIOB_ReadPortPin(GPIO_Pin_4))
 	{
-		//UART1_SendString("\r\n", strlen("\r\n"));
-		//UART1_SendString("Button read successful", strlen("Button read successful"));
-		//UART1_SendString("\r\n", strlen("\r\n"));
+		UART1_SendString("\r\n", strlen("\r\n"));
+		UART1_SendString("Button read successful", strlen("Button read successful"));
+		UART1_SendString("\r\n", strlen("\r\n"));
 
 		GPIOB_SetBits(GPIO_Pin_8);
-		GPIOB_ResetBits(GPIO_Pin_9);
-		GPIOB_ResetBits(GPIO_Pin_16);
-		mDelaymS(3000);
+		mDelaymS(50);
 
-		GPIOB_ResetBits(GPIO_Pin_8);
-		GPIOB_SetBits(GPIO_Pin_9);
-		GPIOB_ResetBits(GPIO_Pin_16);
-		mDelaymS(3000);
-
-		GPIOB_ResetBits(GPIO_Pin_8);
-		GPIOB_ResetBits(GPIO_Pin_9);
-		GPIOB_SetBits(GPIO_Pin_16);
-		mDelaymS(3000);
+		// Signal blink
+//		GPIOB_SetBits(GPIO_Pin_8);
+//		GPIOB_ResetBits(GPIO_Pin_9);
+//		GPIOB_ResetBits(GPIO_Pin_16);
+//		mDelaymS(3000);
+//
+//		GPIOB_ResetBits(GPIO_Pin_8);
+//		GPIOB_SetBits(GPIO_Pin_9);
+//		GPIOB_ResetBits(GPIO_Pin_16);
+//		mDelaymS(3000);
+//
+//		GPIOB_ResetBits(GPIO_Pin_8);
+//		GPIOB_ResetBits(GPIO_Pin_9);
+//		GPIOB_SetBits(GPIO_Pin_16);
+//		mDelaymS(3000);
 
 //		GPIOB_SetBits(GPIO_Pin_20);
 //		GPIOB_SetBits(GPIO_Pin_21);
+	}
+	else
+	{
+		GPIOB_ResetBits(GPIO_Pin_8);
+		mDelaymS(50);
 	}
 }
 
@@ -232,17 +241,17 @@ int main()
 	//touch_test();
 
 	// NTC sensor
-	ADC_InterTSSampInit();
-	read_ntc_adc();
+	//ADC_InterTSSampInit();
+	//read_ntc_adc();
 
     // init AHT sensor
     //AHT21_init();
 
     while(1)
     {
-    	mDelaymS(1000);
+    	//mDelaymS(1000);
     	//test_aht();
-    	//button_press_led_blink();
+    	button_press_led_blink();
     	//touch_test();
     	//mDelaymS(200);
     	//button_press_led_blink();
